@@ -9,11 +9,11 @@ To run your local bot you need:
 2. your own bot token
 
 Here are some features you can help to implement:
-  -> Schedule
-  -> Speakers
-  -> Nearby places (places of interest)
-  -> Post your pic to feed
-  -> Quiz
+* Schedule
+* Speakers
+* Nearby places (places of interest)
+* Post your pic to feed
+* Quiz
 
 Or you can suggest any other feature, which in your opinion might be useful for the event.
 
