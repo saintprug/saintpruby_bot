@@ -1,6 +1,9 @@
 require 'logger'
 require 'bundler'
+
 Bundler.require
+
+require_relative './dispatcher'
 
 Dotenv.load
 
