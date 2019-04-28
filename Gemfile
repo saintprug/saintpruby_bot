@@ -21,7 +21,7 @@ gem 'rom'
 gem 'rom-yaml'
 
 # service api
-gem 'telegram-bot-ruby', require: 'telegram/bot'
+gem 'telegram-bot-ruby', '~> 0.9.0', require: 'telegram/bot'
 
 # fast JSON processing
 gem 'oj'
