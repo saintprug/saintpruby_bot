@@ -1,6 +1,4 @@
 class Dispatcher
-  attr_reader :bot
-
   COMMANDS = %i[
     start
     schedule
@@ -10,6 +8,8 @@ class Dispatcher
     job_board
     stop
   ]
+
+  SCHEDULE = File.read('schedule.txt')
 
   def initialize(bot)
     @bot = bot
@@ -23,6 +23,10 @@ class Dispatcher
       dispatch_callback(message)
     end
   end
+
+  private
+
+  attr_reader :bot
 
   def dispatch_callback(message)
     if message.data == 'like'
@@ -45,6 +49,7 @@ class Dispatcher
   end
 
   def schedule(ctx)
+    bot.api.send_message(chat_id: ctx.chat.id, text: SCHEDULE, parse_mode: :markdown)
   end
 
   def speakers(ctx)
