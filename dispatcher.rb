@@ -1,7 +1,7 @@
 class Dispatcher
   attr_reader :bot
 
-  COMMANDS = %w[
+  COMMANDS = %i[
     start
     schedule
     vote
@@ -41,7 +41,7 @@ class Dispatcher
   end
 
   def start(ctx)
-    bot.api.send_message(chat_id: message.chat.id, text: 'Hello')
+    bot.api.send_message(chat_id: ctx.chat.id, text: 'Hello')
   end
 
   def schedule(ctx)
@@ -60,11 +60,11 @@ class Dispatcher
     vote_button = Telegram::Bot::Types::InlineKeyboardMarkup.new(
       inline_keyboard: [Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Like', callback_data: 'like')]
     )
-    bot.api.send_message(chat_id: message.chat.id, text: 'Like this talk', reply_markup: vote_button)
+    bot.api.send_message(chat_id: ctx.chat.id, text: 'Like this talk', reply_markup: vote_button)
   end
 
-  def stop(message)
+  def stop(ctx)
     kb = Telegram::Bot::Types::ReplyKeyboardRemove.new(remove_keyboard: true)
-    bot.api.send_message(chat_id: message.chat.id, text: 'Sorry to see you go :(', reply_markup: kb)
+    bot.api.send_message(chat_id: ctx.chat.id, text: 'Sorry to see you go :(', reply_markup: kb)
   end
 end
