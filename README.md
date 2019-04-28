@@ -5,7 +5,7 @@ It's super easy to add new commands or implement those, which have not been fini
 You are free to use `sequel`
 
 To run your local bot you need:
-1. VPN (othervise it won't connect to telegram servers)
+1. VPN or live outside the Roskomnadzor-controlled area (otherwise it won't connect to the telegram servers)
 2. your own bot token
 
 Here are some features you can help to implement:
