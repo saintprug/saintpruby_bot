@@ -2,7 +2,9 @@
 
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+ruby '2.6.3'
+
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 gem 'telegram-bot-ruby', require: 'telegram/bot'
 gem 'dotenv'
