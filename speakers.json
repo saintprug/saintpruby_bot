@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Piotr Solnica",
+    "description": "Creator, Core Team *rom-rb*. Co-founder, Core Team *dry-rb*. Literally 🏆 winning hacker, heavily involved with Ruby community.",
+    "github": "https://github.com/solnic",
+    "twitter": "https://twitter.com/_solnic_"
+  },
+  {
+    "name": "Benjamin Roth",
+    "description": "Ruby fan, Ruby on Rails, Javascript freelancer, Haskell lover, Railsconf speaker. Author of \"The Unhappy Path\"",
+    "github": "https://github.com/apneadiving",
+    "twitter": "https://twitter.com/apneadiving"
+  },
+  {
+    "name": "Andrzej Krzywda",
+    "description": "Arkency CEO. Ruby, Rails, React.js, Remote fan",
+    "github": "https://github.com/andrzejkrzywda",
+    "twitter": "https://twitter.com/andrzejkrzywda"
+  },
+  {
+    "name": "Anna Selezniova",
+    "description": "Lead frontend developer *SpiralScout*. MinskCSS & MinskJS co-organiser. Evil Martians alumni. Free hugs.",
+    "github": "https://github.com/askd",
+    "twitter": "https://twitter.com/asktwi"
+  },
+  {
+    "name": "Michal Papis",
+    "description": "*rvm* maintainer. Software Wizard. Shell, Ruby and Rails developer",
+    "github": "https://github.com/mpapis",
+    "twitter": "https://twitter.com/mpapis"
+  },
+  {
+    "name": "Nick Sutterer",
+    "description": "Drinks IPAs, designs APIs. I like naps. Creator of [trailblazer.to](trailblazer.to)  😍🍻🎼",
+    "github": "https://github.com/apotonick",
+    "twitter": "https://twitter.com/apotonick"
+  },
+  {
+    "name": "Bozhidar Batsov",
+    "description": "Hacker. Emacs fanatic. VP of Engineering *Toptal*. I'm not the best, but I'm pretty good.",
+    "github": "https://github.com/bbatsov",
+    "twitter": "https://twitter.com/bbatsov"
+  },
+  {
+    "name": "Tatiana Shepeleva",
+    "description": "QA Engineer at Toptal, bugs hunter and veteran traveler",
+    "github": "https://github.com/sh3pik",
+    "twitter": "https://twitter.com/sh3pik"
+  },
+  {
+    "name": "Ivan Nemytchenko",
+    "description": "Typical freelance rubyist, teacher, speaker, GitLab evangelist.",
+    "github": "https://github.com/inem",
+    "twitter": "https://twitter.com/inem"
+  },
+  {
+    "name": "Kir Shatrov",
+    "description": "Rails, Ruby, and Kubernetes. Does SRE at *Shopify*. *evilmartians* alumni.",
+    "github": "https://github.com/kirs",
+    "twitter": "https://twitter.com/kirshatrov"
+  },
+  {
+    "name": "Hiroshi Shibata",
+    "description": "Ruby core team member, Rubygems and Bundler. Maintainer of ruby-lang.org",
+    "github": "https://github.com/hsbt",
+    "twitter": "https://twitter.com/hsbt"
+  },
+  {
+    "name": "Dávid Halász",
+    "description": "Software Engineer at *RedHat* working on @ManageIQ and coding for fun in Ruby. All opinions are mine.",
+    "github": "https://github.com/skateman",
+    "twitter": "https://twitter.com/halaszdavid"
+  },
+  {
+    "name": "Julian Pokrovsky",
+    "description": "Racket, Ruby, Haskell, Elixir. Sometimes in Spacemacs. Did C++, Rust, JVM stuff and a few other things a couple of times. It was great (except Javascript).",
+    "github": "https://github.com/raventid",
+    "twitter": "https://twitter.com/raventid"
+  },
+  {
+    "name": "Dmitry Tsepelev",
+    "description": "Backend at *evilmartians*. Previously: *OffgridElectric*, *anjlab*",
+    "github": "https://github.com/DmitryTsepelev",
+    "twitter": "https://twitter.com/dmitrytsepelev"
+  },
+  {
+    "name": "Nikolay Sverchkov",
+    "description": "Ruby, Elixir and JS (」ﾟﾛﾟ)｣. Backend at *evilmartians*.",
+    "github": "https://github.com/ssnickolay",
+    "twitter": "https://twitter.com/ssnickolay"
+  },
+  {
+    "name": "Andrey Voronkov",
+    "description": "Programmer, Admin, DevOps, Kubernetes enthusiast, Rust fan, Beer drinker and more...",
+    "github": "https://github.com/Antiarchitect",
+    "twitter": "https://twitter.com/voronkov_andrey"
+  }
+]

@@ -10,6 +10,11 @@ class Dispatcher
   ]
 
   SCHEDULE = File.read('schedule.txt')
+  SPEAKERS = JSON.parse(File.read('speakers.json'))
+      .map do |speaker|
+        "🎤 ***#{speaker['name']}*** \n\n#{speaker['description']} \n\n[Github](#{speaker['github']}) | [Twitter](#{speaker['twitter']})"
+      end
+      .join("\n\n------------------------------\n\n")
 
   def initialize(bot)
     @bot = bot
@@ -53,6 +58,7 @@ class Dispatcher
   end
 
   def speakers(ctx)
+    bot.api.send_message(chat_id: ctx.chat.id, text: SPEAKERS, parse_mode: :markdown, disable_web_page_preview: true)
   end
 
   def places(ctx)
