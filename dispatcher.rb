@@ -10,6 +10,7 @@ class Dispatcher
   ]
 
   SCHEDULE = File.read('schedule.txt')
+  SPEAKERS = File.read('speakers.txt')
 
   def initialize(bot)
     @bot = bot
@@ -53,6 +54,12 @@ class Dispatcher
   end
 
   def speakers(ctx)
+    bot.api.send_message(
+      chat_id: ctx.chat.id,
+      text: SPEAKERS,
+      parse_mode: :markdown,
+      disable_web_page_preview: true
+    )
   end
 
   def places(ctx)
