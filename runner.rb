@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'logger'
 require 'bundler'
+require 'pry'
 
 Bundler.require
 

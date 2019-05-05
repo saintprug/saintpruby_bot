@@ -1,0 +1,26 @@
+{
+    "day_1": [
+        { "time": "🕓 09:30", "title": "⏰ *Doors opened*" },
+        { "time": "🕓 11:00", "title": "🚩 *Ruby 3.0 Redux*", "author": "🎤 Bozhidar Batsov" },
+        { "time": "🕓 12:00", "title": "🚩 *Business logic in Ruby without frameworks, libraries and persistence*", "author": "🎤 Andrzej Krzywda" },
+        { "time": "🕓 13:00", "title": "🚩 *Thinking in graphs: Why GraphQL is not about mapping database to schema*", "author": "🎤 Dmitry Tsepelev" },
+        { "time": "🕓 14:00", "title": "🚩 *Moving Beyond #call: Demystifying Functional Ruby*", "author": "🎤 Piotr Solnica" },
+        { "time": "🕓 15:00", "title": "🚩 *Aspergers in IT*", "author": "🎤 Michal Papis" },
+        { "time": "🕓 16:00", "title": "🚩 *Simple distributed systems in Ruby*", "author": "🎤 Julian Pokrovsky" },
+        { "time": "🕓 17:00", "title": "🚩 *Case Study: how we made our core process 100 times faster (at least)*", "author": "🎤 Benjamin Roth" },
+        { "time": "🕓 18:00", "title": "🚩 *Between Ruby and Javascript*", "author": "🎤 Anna Selezniova" },
+        { "time": "🕓 19:00", "title": "🎉 *Afterparty*" }
+    ],
+    "day_2": [
+        { "time": "🕓 10:00", "title": "⏰ *Doors opened*" },
+        { "time": "🕓 11:00", "title": "🚩 *Anything new, Rails 6?*", "author": "🎤 Nickolay Sverchkov" },
+        { "time": "🕓 12:00", "title": "🚩 *Embrace multi-model thinking!*", "author": "🎤 Ivan Nemytchenko" },
+        { "time": "🕓 13:00", "title": "🚩 *How to test microservices and stay sane*", "author": "🎤 Tatiana Shepeleva" },
+        { "time": "🕓 14:00", "title": "🚩 *Orchestration over Disorganization*", "author": "🎤 Nick Sutterer" },
+        { "time": "🕓 15:00", "title": "🚩 *How to hijack, proxy and smuggle sockets with Rack/Ruby*", "author": "🎤 David Halasz" },
+        { "time": "🕓 16:00", "title": "🚩 *Running Jobs at Scale*", "author": "🎤 Kir Shatrov" },
+        { "time": "🕓 17:00", "title": "🚩 *Typical Rails app in Kubernetes - Tips & Tricks*", "author": "🎤 Andrey Voronkov" },
+        { "time": "🕓 18:00", "title": "🚩 *The Future of library dependency management of Ruby*", "author": "🎤 Hiroshi Shibata" },
+        { "time": "🕓 19:00", "title": "🎉 *Closing words*" }
+    ]
+}
