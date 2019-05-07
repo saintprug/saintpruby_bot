@@ -9,8 +9,9 @@ class Dispatcher
     stop
   ]
 
-  SCHEDULE = File.read('schedule.txt')
-  SPEAKERS = File.read('speakers.txt')
+  SCHEDULE = File.read('./data/schedule.txt')
+  SPEAKERS = File.read('./data/speakers.txt')
+  HELP = File.read('./data/help.txt')
 
   def initialize(bot)
     @bot = bot
@@ -37,7 +38,8 @@ class Dispatcher
   end
 
   def dispatch_message(message)
-    command = message.text.gsub('/','').to_sym
+    command = message.text.gsub('/', '').to_sym
+
     if COMMANDS.include?(command)
       send(command, message)
     else
@@ -46,7 +48,7 @@ class Dispatcher
   end
 
   def start(ctx)
-    bot.api.send_message(chat_id: ctx.chat.id, text: 'Hello')
+    bot.api.send_message(chat_id: ctx.chat.id, text: HELP, parse_mode: :markdown)
   end
 
   def schedule(ctx)
