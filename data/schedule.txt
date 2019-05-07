@@ -6,34 +6,42 @@
 🕓 11:00
 🚩 *Ruby 3.0 Redux*
 🎤 Bozhidar Batsov
+❔ /talk\_1
 
 🕓 12:00
 🚩 *Business logic in Ruby without frameworks, libraries and persistence*
 🎤 Andrzej Krzywda
+❔ /talk\_2
 
 🕓 13:00
 🚩 *Thinking in graphs: Why GraphQL is not about mapping database to schema*
 🎤 Dmitry Tsepelev
+❔ /talk\_3
 
 🕓 14:00
 🚩 *Moving Beyond #call: Demystifying Functional Ruby*
 🎤 Piotr Solnica
+❔ /talk\_4
 
 🕓 15:00
 🚩 *Aspergers in IT*
 🎤 Michal Papis
+❔ /talk\_5
 
 🕓 16:00
 🚩 *Simple distributed systems in Ruby*
 🎤 Julian Pokrovsky
+❔ /talk\_6
 
 🕓 17:00
 🚩 *Case Study: how we made our core process 100 times faster (at least)*
 🎤 Benjamin Roth
+❔ /talk\_7
 
 🕓 18:00
 🚩 *Between Ruby and Javascript*
 🎤 Anna Selezniova
+❔ /talk\_8
 
 🕓 19:00
 🎉 *Afterparty*
@@ -46,34 +54,42 @@
 🕓 11:00
 🚩 *Anything new, Rails 6?*
 🎤 Nickolay Sverchkov
+❔ /talk\_9
 
 🕓 12:00
 🚩 *Embrace multi-model thinking!*
 🎤 Ivan Nemytchenko
+❔ /talk\_10
 
 🕓 13:00
 🚩 *How to test microservices and stay sane*
 🎤 Tatiana Shepeleva
+❔ /talk\_11
 
 🕓 14:00
 🚩 *Orchestration over Disorganization*
 🎤 Nick Sutterer
+❔ /talk\_12
 
 🕓 15:00
 🚩 *How to hijack, proxy and smuggle sockets with Rack/Ruby*
 🎤 David Halasz
+❔ /talk\_13
 
 🕓 16:00
 🚩 *Running Jobs at Scale*
 🎤 Kir Shatrov
+❔ /talk\_14
 
 🕓 17:00
 🚩 *Typical Rails app in Kubernetes - Tips & Tricks*
 🎤 Andrey Voronkov
+❔ /talk\_15
 
 🕓 18:00
 🚩 *The Future of library dependency management of Ruby*
 🎤 Hiroshi Shibata
+❔ /talk\_16
 
 🕓 19:00
 🎉 *Closing words*

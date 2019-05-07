@@ -1,3 +1,5 @@
+require 'json'
+
 class Dispatcher
   COMMANDS = %i[
     start
@@ -7,10 +9,12 @@ class Dispatcher
     places
     job_board
     stop
+    talk
   ]
 
   SCHEDULE = File.read('./data/schedule.txt')
   SPEAKERS = File.read('./data/speakers.txt')
+  TALK_DESCRIPTIONS = JSON.parse(File.read('./data/talk_descriptions.json'))
   HELP = File.read('./data/help.txt')
 
   def initialize(bot)
@@ -38,13 +42,9 @@ class Dispatcher
   end
 
   def dispatch_message(message)
-    command = message.text.gsub('/', '').to_sym
+    command = message.text.to_s.gsub(%r{\A/|_\d+\z}, '').to_sym
 
-    if COMMANDS.include?(command)
-      send(command, message)
-    else
-      bot.api.send_message(chat_id: message.chat.id, text: "I can't understand you")
-    end
+    COMMANDS.include?(command) ? send(command, message) : bad_command(message)
   end
 
   def start(ctx)
@@ -53,6 +53,17 @@ class Dispatcher
 
   def schedule(ctx)
     bot.api.send_message(chat_id: ctx.chat.id, text: SCHEDULE, parse_mode: :markdown)
+  end
+
+  def talk(ctx)
+    talk_id = ctx.text.delete_prefix('/talk_')
+    return bad_command(ctx) unless TALK_DESCRIPTIONS.key?(talk_id)
+
+    bot.api.send_photo(
+      chat_id: ctx.chat.id,
+      photo: TALK_DESCRIPTIONS[talk_id]['photo'],
+      caption: TALK_DESCRIPTIONS[talk_id]['caption']
+    )
   end
 
   def speakers(ctx)
@@ -80,5 +91,9 @@ class Dispatcher
   def stop(ctx)
     kb = Telegram::Bot::Types::ReplyKeyboardRemove.new(remove_keyboard: true)
     bot.api.send_message(chat_id: ctx.chat.id, text: 'Sorry to see you go :(', reply_markup: kb)
+  end
+
+  def bad_command(ctx)
+    bot.api.send_message(chat_id: ctx.chat.id, text: "I can't understand you")
   end
 end
