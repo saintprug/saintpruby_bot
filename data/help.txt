@@ -6,5 +6,5 @@ I'll help you during the conference. Stay tuned :) 💎
 /vote - vote the talk
 /speakers - show information about speakers
 /places - afterparty places
-/job\_board - find a job here
+/jobs - find a job here
 /stop - please don't
