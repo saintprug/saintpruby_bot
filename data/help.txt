@@ -7,4 +7,4 @@ I'll help you during the conference. Stay tuned :) 💎
 /speakers - show information about speakers
 /places - afterparty places
 /job\_board - find a job here
-/stop - please dont
+/stop - please don't
