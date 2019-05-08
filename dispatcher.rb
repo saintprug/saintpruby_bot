@@ -1,3 +1,7 @@
+require 'yaml'
+
+require_relative 'dispatchers/job'
+
 class Dispatcher
   COMMANDS = %i[
     start
@@ -5,7 +9,7 @@ class Dispatcher
     vote
     speakers
     places
-    job_board
+    jobs
     stop
   ]
 
@@ -30,10 +34,19 @@ class Dispatcher
 
   attr_reader :bot
 
-  def dispatch_callback(message)
-    if message.data == 'like'
+  def dispatch_callback(callback)
+    begin
+      command = JSON.parse(callback.data)['command']
+    rescue JSON::ParserError
+      return nil
+    end
+
+    if command == 'like'
       # redis.publish('liker_bot', message.from.username)
-      bot.api.answer_callback_query(callback_query_id: message.id)
+      # Dispatchers::Like.new(...)
+      bot.api.answer_callback_query(callback_query_id: callback.id)
+    elsif command == 'more'
+      Dispatchers::Job.new(bot).more(callback)
     end
   end
 
@@ -67,12 +80,13 @@ class Dispatcher
   def places(ctx)
   end
 
-  def job_board(ctx)
+  def jobs(ctx)
+    Dispatchers::Job.new(bot).jobs(ctx)
   end
 
   def vote(ctx)
     vote_button = Telegram::Bot::Types::InlineKeyboardMarkup.new(
-      inline_keyboard: [Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Like', callback_data: 'like')]
+      inline_keyboard: [Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Like', callback_data: { command: 'like' }.to_json)]
     )
     bot.api.send_message(chat_id: ctx.chat.id, text: 'Like this talk', reply_markup: vote_button)
   end
