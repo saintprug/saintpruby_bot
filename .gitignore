@@ -1,1 +1,4 @@
 .env
+
+log/development.log
+log/production.log

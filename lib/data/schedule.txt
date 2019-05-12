@@ -1,0 +1,79 @@
+*——— Day 1 (June, 1) ———*
+
+🕓 09:30
+⏰ *Doors opened*
+
+🕓 11:00
+🚩 *Ruby 3.0 Redux*
+🎤 Bozhidar Batsov
+
+🕓 12:00
+🚩 *Business logic in Ruby without frameworks, libraries and persistence*
+🎤 Andrzej Krzywda
+
+🕓 13:00
+🚩 *Thinking in graphs: Why GraphQL is not about mapping database to schema*
+🎤 Dmitry Tsepelev
+
+🕓 14:00
+🚩 *Moving Beyond #call: Demystifying Functional Ruby*
+🎤 Piotr Solnica
+
+🕓 15:00
+🚩 *Aspergers in IT*
+🎤 Michal Papis
+
+🕓 16:00
+🚩 *Simple distributed systems in Ruby*
+🎤 Julian Pokrovsky
+
+🕓 17:00
+🚩 *Case Study: how we made our core process 100 times faster (at least)*
+🎤 Benjamin Roth
+
+🕓 18:00
+🚩 *Between Ruby and Javascript*
+🎤 Anna Selezniova
+
+🕓 19:00
+🎉 *Afterparty*
+
+*——— Day 2 (June, 2) ———*
+
+🕓 10:00
+⏰ *Doors opened*
+
+🕓 11:00
+🚩 *Anything new, Rails 6?*
+🎤 Nickolay Sverchkov
+
+🕓 12:00
+🚩 *Embrace multi-model thinking!*
+🎤 Ivan Nemytchenko
+
+🕓 13:00
+🚩 *How to test microservices and stay sane*
+🎤 Tatiana Shepeleva
+
+🕓 14:00
+🚩 *Orchestration over Disorganization*
+🎤 Nick Sutterer
+
+🕓 15:00
+🚩 *How to hijack, proxy and smuggle sockets with Rack/Ruby*
+🎤 David Halasz
+
+🕓 16:00
+🚩 *Running Jobs at Scale*
+🎤 Kir Shatrov
+
+🕓 17:00
+🚩 *Typical Rails app in Kubernetes - Tips & Tricks*
+🎤 Andrey Voronkov
+
+🕓 18:00
+🚩 *The Future of library dependency management of Ruby*
+🎤 Hiroshi Shibata
+
+🕓 19:00
+🎉 *Closing words*

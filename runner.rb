@@ -1,12 +1,10 @@
-require 'logger'
-require 'bundler'
-Bundler.require
+# frozen_string_literal: true
 
-Dotenv.load
+require_relative 'environment'
 
-logger = Logger.new(STDOUT)
+logger = Logger.new("log/#{ENV['ENVIRONMENT']}.log")
 
-Telegram::Bot::Client.run(ENV['TOKEN'], logger: logger) do |bot|
+Telegram::Bot::Client.run(ENV['TELEGRAM_BOT_API_TOKEN'], logger: logger) do |bot|
   dispatcher = Dispatcher.new(bot)
 
   bot.listen do |message|

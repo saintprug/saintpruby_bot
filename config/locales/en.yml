@@ -1,0 +1,16 @@
+en:
+  commands:
+    start: |
+      💎 Hi %{full_name}! I'm Saint P Rubyconf Bot.
+      I'll help you during the conference. Stay tuned :) 💎
+
+      *What can I do?*
+      /schedule - show conference schedule
+      /vote - vote the talk
+      /speakers - show information about speakers
+      /places - afterparty places
+      /jobs - find a job here
+      /stop - please don't
+    stop_message: Sorry to see you go :(
+  errors:
+    unknown_command: I can't understand you

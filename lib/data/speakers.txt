@@ -1,0 +1,68 @@
+*——— Speakers ———*
+
+*🔴 Piotr Solnica*
+Creator / Core Team @rom-rb
+Co-founder / Core Team @dry-rb
+Literally 🏆 winning hacker, heavily involved with Ruby community
+[Github](https://github.com/solnic) / [Twitter](https://twitter.com/_solnic_)
+
+*🔴 Benjamin Roth*
+Ruby fan, Ruby on Rails / Javascript freelancer, Haskell lover, Railsconf speaker
+Author of "The Unhappy Path"
+[Github](https://github.com/apneadiving) / [Twitter](https://twitter.com/apneadiving)
+
+*🔴 Andrzej Krzywda*
+Arkency CEO. Ruby, Rails, React.js, remote fan
+[Github](https://github.com/andrzejkrzywda) / [Twitter](https://twitter.com/andrzejkrzywda) 
+
+*🔴 Anna Selezniova *
+Lead frontend developer @ Spiral Scout. MinskCSS & MinskJS co-organiser. Evil Martians alumni. Free hugs
+[Github](https://github.com/askd) / [Twitter](https://twitter.com/asktwi) 
+
+*🔴 Nick Sutterer*
+Drinks IPAs, designs APIs. I like naps. Creator of trailblazer.to 😍🍻🎼
+[Github](https://github.com/apotonick) / [Twitter](https://twitter.com/apotonick) 
+
+*🔴 Tatiana Shepeleva*
+QA Engineer at Toptal, bugs hunter and veteran traveler
+[Github](https://github.com/sh3pik) / [Twitter](https://twitter.com/sh3pik) 
+
+*🔴 Kir Shatrov*
+Rails, Ruby, and Kubernetes. Does SRE at @Shopify. @evilmartians alumni
+[Github](https://github.com/kirs) / [Twitter](https://twitter.com/kirshatrov) 
+
+*🔴 Dávid Halász*
+Software Engineer at @RedHat working on @ManageIQ and coding for fun in Ruby. All opinions are mine
+[Github](https://github.com/skateman) / [Twitter](https://twitter.com/halaszdavid) 
+
+*🔴 Dmitry Tsepelev*
+Backend at @evilmartians Previously: @OffgridElectric / @anjlab
+[Github](https://github.com/DmitryTsepelev) / [Twitter](https://twitter.com/dmitrytsepelev) 
+
+*🔴 Andrey Voronkov*
+Programmer, Admin, DevOps, Kubernetes enthusiast, Rust fan, Beer drinker and more...
+[Github](https://github.com/Antiarchitect) / [Twitter](https://twitter.com/voronkov_andrey) 
+
+*🔴 Michal Papis*
+[@rmv_io](https://twitter.com/rvm_io) maintainer. Software Wizard. Shell, Ruby and Rails developer
+[Github](https://github.com/mpapis) / [Twitter](https://twitter.com/mpapis) 
+
+*🔴 Bozhidar Batsov*
+Hacker. Emacs fanatic. VP of Engineering @Toptal. I'm not the best, but I'm pretty good
+[Github](https://github.com/bbatsov) / [Twitter](https://twitter.com/bbatsov) 
+
+*🔴 Ivan Nemytchenko*
+Typical freelance rubyist, teacher, speaker, GitLab evangelist.
+[Github](https://github.com/inem) / [Twitter](https://twitter.com/inem)
+
+*🔴 Hiroshi Shibata*
+Ruby core team member, Rubygems and Bundler. Maintainer of ruby-lang.org
+[Github](https://github.com/hsbt) / [Twitter](https://twitter.com/hsbt) 
+
+*🔴 Julian Pokrovsky*
+Racket, Ruby, Haskell, Elixir. Sometimes in Spacemacs. Did C++, Rust, JVM stuff and a few other things a couple of times. It was great (except Javascript)
+[Github](https://github.com/raventid) / [Twitter](https://twitter.com/raventid) 
+
+*🔴 Nikolay Sverchkov*
+Ruby, Elixir and JS (」ﾟﾛﾟ)｣. Backend at @evilmartians
+[Github](https://github.com/ssnickolay) / [Twitter](https://twitter.com/ssnickolay) 
