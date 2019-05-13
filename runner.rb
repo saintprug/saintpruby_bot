@@ -7,6 +7,9 @@ require_relative './dispatcher'
 
 Dotenv.load
 
+# 🕓 18:00 🎤 Hiroshi Shibata
+# 🚩 *The Future of library dependency management of Ruby*
+
 logger = Logger.new(STDOUT)
 
 Telegram::Bot::Client.run(ENV['TELEGRAM_BOT_API_TOKEN'], logger: logger) do |bot|

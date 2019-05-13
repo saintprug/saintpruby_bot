@@ -1,24 +1,38 @@
 require 'yaml'
 
-require_relative 'dispatchers/job'
+require_relative './lib/commands/start'
+require_relative './lib/commands/schedule'
+require_relative './lib/commands/vote'
+require_relative './lib/commands/speakers'
+require_relative './lib/commands/jobs'
+require_relative './lib/commands/beers'
+require_relative './lib/commands/places'
+require_relative './lib/commands/back'
+
+# configuration = ROM::Configuration.new(:yaml, './data')
+# configuration.register_relation(Relations::Jobs)
+# configuration.register_relation(Relations::Talks)
+# rom = ROM.container(configuration)
 
 class Dispatcher
-  COMMANDS = %i[
-    start
-    schedule
-    vote
-    speakers
-    places
-    jobs
-    stop
-  ]
 
-  SCHEDULE = File.read('./data/schedule.txt')
   SPEAKERS = File.read('./data/speakers.txt')
-  HELP = File.read('./data/help.txt')
+  UNKNOWN_COMMAND = 'undefined'.freeze
+  UNKNOWN_RESPONSE = "Didn't get it".freeze
 
   def initialize(bot)
     @bot = bot
+    bot_api = @bot.api
+    @commands = {
+      '/start' => Commands::Start.new(bot_api),
+      '📆 Schedule' => Commands::Schedule.new(bot_api),
+      '❤️ Vote' => Commands::Vote.new(bot_api),
+      '🎤 Speakers' => Commands::Speakers.new(bot_api),
+      '💵 Jobs' => Commands::Jobs.new(bot_api),
+      '🍻 Beer counter' => Commands::Beers.new(bot_api),
+      '🏛 Places' => Commands::Places.new(bot_api),
+      '◀️ Back' => Commands::Back.new(bot_api)
+    }
   end
 
   def call(message)
@@ -32,67 +46,27 @@ class Dispatcher
 
   private
 
-  attr_reader :bot
+  attr_reader :bot, :commands
+
+  def dispatch_message(message)
+    command = commands.fetch(message.text, UNKNOWN_COMMAND)
+    return bot.api.send_message(chat_id: message.chat.id, text: UNKNOWN_RESPONSE) if command == UNKNOWN_COMMAND
+
+    command.call(message)
+  end
 
   def dispatch_callback(callback)
     begin
       command = JSON.parse(callback.data)['command']
     rescue JSON::ParserError
-      return nil
+      bot.api.answer_callback_query(callback_query_id: callback.id, text: "I can't understand you")
     end
 
     if command == 'like'
       # redis.publish('liker_bot', message.from.username)
-      # Dispatchers::Like.new(...)
       bot.api.answer_callback_query(callback_query_id: callback.id)
     elsif command == 'more'
       Dispatchers::Job.new(bot).more(callback)
     end
-  end
-
-  def dispatch_message(message)
-    command = message.text.gsub('/', '').to_sym
-
-    if COMMANDS.include?(command)
-      send(command, message)
-    else
-      bot.api.send_message(chat_id: message.chat.id, text: "I can't understand you")
-    end
-  end
-
-  def start(ctx)
-    bot.api.send_message(chat_id: ctx.chat.id, text: HELP, parse_mode: :markdown)
-  end
-
-  def schedule(ctx)
-    bot.api.send_message(chat_id: ctx.chat.id, text: SCHEDULE, parse_mode: :markdown)
-  end
-
-  def speakers(ctx)
-    bot.api.send_message(
-      chat_id: ctx.chat.id,
-      text: SPEAKERS,
-      parse_mode: :markdown,
-      disable_web_page_preview: true
-    )
-  end
-
-  def places(ctx)
-  end
-
-  def jobs(ctx)
-    Dispatchers::Job.new(bot).jobs(ctx)
-  end
-
-  def vote(ctx)
-    vote_button = Telegram::Bot::Types::InlineKeyboardMarkup.new(
-      inline_keyboard: [Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Like', callback_data: { command: 'like' }.to_json)]
-    )
-    bot.api.send_message(chat_id: ctx.chat.id, text: 'Like this talk', reply_markup: vote_button)
-  end
-
-  def stop(ctx)
-    kb = Telegram::Bot::Types::ReplyKeyboardRemove.new(remove_keyboard: true)
-    bot.api.send_message(chat_id: ctx.chat.id, text: 'Sorry to see you go :(', reply_markup: kb)
   end
 end

@@ -1,18 +1,20 @@
-module Dispatchers
-  class Job
-    JOBS = YAML.load_file('./data/jobs.yml')
+require_relative 'base'
 
-    attr_reader :bot
+module Commands
+  class Jobs < Base
 
-    def initialize(bot)
-      @bot = bot
-    end
+    JOBS = {}
+    def more(id)
+      job = JOBS.find { |j| j['id'] == id }
 
-    def more(callback)
-      data = JSON.parse(callback.data)
-      job = JOBS.detect { |j| j['id'] == data['job_id'] }
-      text = "*#{job['title']}*\nCompany: #{job['company']}\nLocation: #{job['location']}\n#{job['announce']}\n#{job['full_description']}"
-      bot.api.edit_message_text(
+      text = ["*#{job['title']}*"]
+      text << "Company: #{job['company']}"
+      text << "Location: #{job['location']}"
+      text << job['announce']
+      text << job['full_description']
+      text.join!("\n")
+
+      edit_message(
         message_id: callback.message.message_id,
         chat_id: callback.message.chat.id,
         text: text,
@@ -20,7 +22,7 @@ module Dispatchers
       )
     end
 
-    def jobs(ctx)
+    def call(message)
       JOBS.each_with_index do |job, i|
         text = "*#{job['title']}*\nCompany: #{job['company']}\nLocation: #{job['location']}\n#{job['announce']}"
         more_button = Telegram::Bot::Types::InlineKeyboardMarkup.new(
@@ -29,7 +31,7 @@ module Dispatchers
                               callback_data: { command: 'more', job_id: i }.to_json
                             )]
         )
-        bot.api.send_message(chat_id: ctx.chat.id, text: text, parse_mode: :markdown, reply_markup: more_button)
+        send_message(chat_id: message.chat.id, text: text, parse_mode: :markdown, reply_markup: more_button)
       end
     end
   end
