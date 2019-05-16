@@ -9,11 +9,6 @@ require_relative './lib/commands/beers'
 require_relative './lib/commands/places'
 require_relative './lib/commands/back'
 
-# configuration = ROM::Configuration.new(:yaml, './data')
-# configuration.register_relation(Relations::Jobs)
-# configuration.register_relation(Relations::Talks)
-# rom = ROM.container(configuration)
-
 class Dispatcher
 
   SPEAKERS = File.read('./data/speakers.txt')
