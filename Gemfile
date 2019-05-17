@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 ruby '2.6.3'
 
@@ -28,3 +28,6 @@ gem 'multi_json'
 # web & app server
 gem 'iodine'
 gem 'rack'
+
+# tests
+gem 'rspec'

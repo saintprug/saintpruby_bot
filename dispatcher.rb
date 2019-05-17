@@ -1,5 +1,3 @@
-require 'yaml'
-
 require_relative './lib/commands/start'
 require_relative './lib/commands/schedule'
 require_relative './lib/commands/vote'
@@ -10,8 +8,6 @@ require_relative './lib/commands/places'
 require_relative './lib/commands/back'
 
 class Dispatcher
-
-  SPEAKERS = File.read('./data/speakers.txt')
   UNKNOWN_COMMAND = 'undefined'.freeze
   UNKNOWN_RESPONSE = "Didn't get it".freeze
 
@@ -61,7 +57,6 @@ class Dispatcher
       # redis.publish('liker_bot', message.from.username)
       bot.api.answer_callback_query(callback_query_id: callback.id)
     elsif command == 'more'
-      Dispatchers::Job.new(bot).more(callback)
     end
   end
 end
