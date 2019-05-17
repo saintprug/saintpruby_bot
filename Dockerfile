@@ -16,4 +16,4 @@ RUN bundle config --global git.allow_insecure true && \
 
 COPY . .
 
-CMD ["ruby", "runner.rb"]
+CMD ["rake", "server:start"]
