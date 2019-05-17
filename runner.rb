@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require
 
-require_relative 'system/container'
+require_relative 'system/boot'
 require_relative 'dispatcher'
 
 Dotenv.load

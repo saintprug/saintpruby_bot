@@ -2,6 +2,8 @@ require_relative 'base'
 
 module Commands
   class Schedule < Base
+    include Import[repo: 'repositories.talk_repo']
+
     def call(message)
       schedule_keyboard = Telegram::Bot::Types::InlineKeyboardMarkup.new(
         inline_keyboard: [[
