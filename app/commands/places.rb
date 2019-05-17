@@ -1,7 +1,5 @@
-require_relative 'base'
-
 module Commands
-  class Beers < Base
+  class Places < Base
     def call(message)
     end
   end

@@ -1,8 +1,8 @@
 require 'dry/system/container'
+require 'dry/system/components'
 
 class Application < Dry::System::Container
   configure do |config|
-    config.name = :saintpruby_bot
     config.auto_register = %w(lib)
   end
 

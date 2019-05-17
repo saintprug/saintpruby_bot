@@ -1,9 +1,5 @@
-require 'import'
-require_relative 'base'
-
 module Commands
   class Jobs < Base
-    include Import['rom']
 
     def more(id)
       job = dataset.find { |j| j['id'] == id }
@@ -43,7 +39,7 @@ module Commands
     private
 
     def dataset
-      @dataset ||= rom.relations['jobs'].dataset
+      @dataset ||= jobs.dataset
     end
   end
 end

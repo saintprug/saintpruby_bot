@@ -1,11 +1,4 @@
-require_relative './lib/commands/start'
-require_relative './lib/commands/schedule'
-require_relative './lib/commands/vote'
-require_relative './lib/commands/speakers'
-require_relative './lib/commands/jobs'
-require_relative './lib/commands/beers'
-require_relative './lib/commands/places'
-require_relative './lib/commands/back'
+require 'yaml'
 
 class Dispatcher
   UNKNOWN_COMMAND = 'undefined'.freeze
