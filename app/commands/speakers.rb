@@ -1,5 +1,3 @@
-require_relative 'base'
-
 module Commands
   class Speakers < Base
     SPEAKERS = File.read('./data/speakers.txt')

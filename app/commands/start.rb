@@ -1,5 +1,3 @@
-require_relative 'base'
-
 module Commands
   class Start < Base
     MENU_KEYBOARD = Telegram::Bot::Types::ReplyKeyboardMarkup.new(keyboard:
