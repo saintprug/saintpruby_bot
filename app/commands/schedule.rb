@@ -4,6 +4,9 @@ module Commands
   class Schedule < Base
     include Import[repo: 'repositories.talk_repo']
 
+    # 🕓 18:00 🎤 Hiroshi Shibata
+    # 🚩 *The Future of library dependency management of Ruby*
+
     def call(message)
       schedule_keyboard = Telegram::Bot::Types::InlineKeyboardMarkup.new(
         inline_keyboard: [[

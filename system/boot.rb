@@ -1,7 +1,13 @@
+require 'bundler'
+
+Bundler.require
+
 begin
   require 'pry-byebug'
 rescue LoadError
 end
+
+Dotenv.load
 
 require_relative 'application'
 

@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require_relative '../system/boot'
+
+begin
+  require 'pry-byebug'
+  binding.pry
+rescue LoadError
+  binding.irb
+end
