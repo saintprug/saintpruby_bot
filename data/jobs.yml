@@ -3,12 +3,12 @@ jobs:
     title: 'Super duper mega job'
     company: 'Awesome company'
     location: 'New York'
-    announce: 'short job description'
+    short_description: 'short job description'
     full_description: 'and some more detailed info'
 
   - id: 1
     title: 'Mega awesome job'
     company: 'SpaceX'
     location: 'Saint P'
-    announce: 'short job description'
+    short_description: 'short job description'
     full_description: 'and some more detailed info'
