@@ -1,37 +1,23 @@
 module Commands
   class Beers < Base
+    include Import[beer_service: 'services.beer']
+
     private
 
     def handle_call(message)
-      
-    end
+      chat_id = message.chat.id
 
-    def drink_beer(message)
-      beer_service = Services::Beer.new(message.chat.id)
-
-      if beer_service.last && beer_service.drinks_fast?
-        bot.api.send_message(
-          chat_id: message.chat.id,
-          text: ['Easy, you', 'Who drives you home?', 'What are you, Homer Simpson?'].sample
-        )
+      if beer_service.last(chat_id) && beer_service.drinks_fast?(chat_id)
+        message = ['*Easy, you*', '*Who drives you home*?', '*What are you, Homer Simpson?*'].sample
       else
-        beer_service.drink
-
-        giphy = GiphyClient.new.send_request
-
-        bot.api.send_animation(
-          chat_id: message.chat.id,
-          animation: giphy[:data][:fixed_height_small_url]
-        )
+        beer_service.drink(chat_id)
+        message = "#{beer_service.scale_of_drunkness(chat_id)}.\nAlready drunk: #{'🍻' * beer_service.user_total(chat_id)}"
       end
-    end
 
-    def total_drunk_beer(message)
-      beer_service = Services::Beer.new(message.chat.id)
-
-      bot.api.send_message(
-        chat_id: message.chat.id,
-        text: beer_service.total
+      send_message(
+        chat_id: chat_id,
+        text: message,
+        parse_mode: :markdown
       )
     end
   end

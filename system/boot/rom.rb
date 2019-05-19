@@ -5,7 +5,11 @@ Application.boot(:rom) do |app|
   end
 
   start do
-    configuration = ROM::Configuration.new(:yaml, app.root.join('data'))
+    configuration = ROM::Configuration.new(
+      default: [:yaml, app.root.join('data')],
+      redis: [:redis],
+    )
+
     configuration.auto_registration(app.root.join('lib/persistence'), namespace: false)
 
     container = ROM.container(configuration)

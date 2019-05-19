@@ -3,7 +3,7 @@ module Commands
     MENU_KEYBOARD = reply_keyboard(
       [ button('📆 Schedule'), button('❤️ Vote') ],
       [ button('🎤 Speakers'), button('💵 Jobs') ],
-      [ button('🍻 Beer counter'), button('🏛 Places') ]
+      [ button('🍻 Drunk beer!'), button('🏛 Places') ]
     )
 
     WELCOME_TEXT = """
