@@ -12,7 +12,7 @@ module Commands
       text << job['full_description']
       text.join("\n")
 
-      edit_message(
+      edit_message_text(
         message_id: callback.message.message_id,
         chat_id: callback.message.chat.id,
         text: text,
