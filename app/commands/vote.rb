@@ -1,5 +1,3 @@
-require_relative 'base'
-
 module Commands
   class Vote < Base
     def call(message)

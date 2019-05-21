@@ -1,8 +1,9 @@
 module Commands
   class Jobs < Base
+    include Import[repo: 'repositories.job_repo']
 
     def more(id)
-      job = dataset.find { |j| j['id'] == id }
+      job = repo.by_id(id)
 
       text = ["*#{job['title']}*"]
       text << "Company: #{job['company']}"
@@ -20,7 +21,7 @@ module Commands
     end
 
     def call(message)
-      dataset.each_with_index do |job, i|
+      repo.all.each do |job|
         text = ["*#{job[:title]}*"]
         text << "Company: #{job[:company]}"
         text << "Location: #{job[:location]}"
@@ -29,17 +30,11 @@ module Commands
         more_button = Telegram::Bot::Types::InlineKeyboardMarkup.new(
           inline_keyboard: [Telegram::Bot::Types::InlineKeyboardButton.new(
             text: 'Show more',
-            callback_data: { command: 'more', job_id: i }.to_json
+            callback_data: { command: 'more', job_id: job.id }.to_json
           )]
         )
         send_message(chat_id: message.chat.id, text: text, parse_mode: :markdown, reply_markup: more_button)
       end
-    end
-
-    private
-
-    def dataset
-      @dataset ||= jobs.dataset
     end
   end
 end

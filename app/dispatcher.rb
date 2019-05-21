@@ -1,5 +1,3 @@
-require 'yaml'
-
 class Dispatcher
   UNKNOWN_COMMAND = 'undefined'.freeze
   UNKNOWN_RESPONSE = "Didn't get it".freeze

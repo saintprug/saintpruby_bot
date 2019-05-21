@@ -1,5 +1,3 @@
-require_relative 'base'
-
 module Commands
   class Schedule < Base
     include Import[repo: 'repositories.talk_repo']
