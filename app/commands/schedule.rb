@@ -2,6 +2,13 @@ module Commands
   class Schedule < Base
     include Import[repo: 'repositories.talk_repo']
 
+    CONFDAY_SELECTION_KEYBOARD = Telegram::Bot::Types::InlineKeyboardMarkup.new(
+      inline_keyboard: [[
+        Telegram::Bot::Types::InlineKeyboardButton.new(text: 'June 1, Sat', callback_data: { command: 'schedule', args: { confday: 1 } }.to_json),
+        Telegram::Bot::Types::InlineKeyboardButton.new(text: 'June 2, Sun', callback_data: { command: 'schedule', args: { confday: 2 } }.to_json)
+      ]]
+    )
+
     # 🕓 18:00 🎤 Hiroshi Shibata
     # 🚩 *The Future of library dependency management of Ruby*
 
@@ -21,7 +28,7 @@ module Commands
       send_message(
         chat_id: message.chat.id,
         text: 'Choose a day:',
-        reply_markup: day_selection_keyboard
+        reply_markup: CONFDAY_SELECTION_KEYBOARD
       )
     end
 
@@ -37,14 +44,7 @@ module Commands
       )
     end
 
-    def day_selection_keyboard
-      Telegram::Bot::Types::InlineKeyboardMarkup.new(
-        inline_keyboard: [[
-          Telegram::Bot::Types::InlineKeyboardButton.new(text: 'June 1, Sat', callback_data: { command: 'schedule', args: { confday: 1 } }.to_json),
-          Telegram::Bot::Types::InlineKeyboardButton.new(text: 'June 2, Sun', callback_data: { command: 'schedule', args: { confday: 2 } }.to_json)
-        ]]
-      )
-    end
+
 
     def talks_message(confday, talks)
       <<~MARKDOWN

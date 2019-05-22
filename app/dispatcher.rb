@@ -49,7 +49,7 @@ class Dispatcher
       # redis.publish('liker_bot', message.from.username)
       bot.api.answer_callback_query(callback_query_id: callback.id)
     when 'schedule'
-     @commands['📆 Schedule'].call(callback)
+      @commands['📆 Schedule'].call(callback)
     when 'more'
     end
   end
