@@ -2,17 +2,17 @@ module Commands
   class Schedule < Base
     include Import[repo: 'repositories.talk_repo']
 
-    CONFDAY_SELECTION_KEYBOARD = Telegram::Bot::Types::InlineKeyboardMarkup.new(
-      inline_keyboard: [[
-        Telegram::Bot::Types::InlineKeyboardButton.new(text: 'June 1, Sat', callback_data: { command: 'schedule', args: { confday: 1 } }.to_json),
-        Telegram::Bot::Types::InlineKeyboardButton.new(text: 'June 2, Sun', callback_data: { command: 'schedule', args: { confday: 2 } }.to_json)
-      ]]
+    CONFDAY_SELECTION_KEYBOARD = inline_keyboard(
+      [
+        button('June 1, Sat', 'schedule', confday: 1),
+        button('June 2, Sun', 'schedule', confday: 2)
+      ]
     )
 
     private
 
-    # 🕓 18:00 🎤 Hiroshi Shibata
-    # 🚩 *The Future of library dependency management of Ruby*
+    # Choose a day:
+    # [ June 1, Sat ] [ June 2, Sun ]
     #
     def handle_call(message)
       send_message(
@@ -22,6 +22,11 @@ module Commands
       )
     end
 
+    # 🕓 18:00 🎤 Hiroshi Shibata
+    # 🚩 *The Future of library dependency management of Ruby*
+    #
+    # ...
+    #
     def handle_callback(callback, args)
       date = Date.new(2019, 06, args.fetch('confday'))
       talks = repo.by_date(date)
