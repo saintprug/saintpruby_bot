@@ -23,7 +23,9 @@ module Commands
       *What can I do for you?*
     """.freeze
 
-    def call(message)
+    private
+
+    def handle_call(message)
       send_message(
         chat_id: message.chat.id,
         text: WELCOME_TEXT,

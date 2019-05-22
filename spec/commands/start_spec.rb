@@ -1,8 +1,8 @@
 RSpec.describe Commands::Start do
   describe '#call' do
     let(:api) { double('api', send_message: nil) }
-    let(:chat) { double('chat', id: 1) }
-    let(:message) { double('message', chat: chat) }
+    let(:chat) { Telegram::Bot::Types::Chat.new(id: 1) }
+    let(:message) {Telegram::Bot::Types::Message.new(chat: chat) }
 
     subject { described_class.new(api).call(message) }
 

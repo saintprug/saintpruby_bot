@@ -2,7 +2,9 @@ module Commands
   class Speakers < Base
     SPEAKERS = File.read('./data/speakers.txt')
 
-    def call(message)
+    private
+
+    def handle_call(message)
       send_message(
         chat_id: message.chat.id,
         text: SPEAKERS,

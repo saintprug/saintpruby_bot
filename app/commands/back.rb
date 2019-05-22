@@ -1,6 +1,8 @@
 module Commands
   class Back < Start
-    def call(message)
+    private
+
+    def handle_call(message)
       send_message(
         chat_id: message.chat.id,
         text: 'Choose from the commands below:',

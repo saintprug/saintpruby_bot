@@ -1,6 +1,8 @@
 module Commands
   class Beers < Base
-    def call(message)
+    private
+
+    def handle_call(message)
     end
   end
 end
