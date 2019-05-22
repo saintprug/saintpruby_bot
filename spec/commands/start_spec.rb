@@ -1,5 +1,3 @@
-require 'commands/start'
-
 RSpec.describe Commands::Start do
   describe '#call' do
     let(:api) { double('api', send_message: nil) }

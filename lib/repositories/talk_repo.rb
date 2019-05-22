@@ -2,8 +2,8 @@ module Repositories
   class TalkRepo < ROM::Repository[:talks]
     include ArgsImport['rom']
 
-    def later_that_day
-      talks.by_datetime(DateTime.now)
+    def by_date(date)
+      talks.select { |talk| talk.datetime.to_date == date }.sort_by(&:datetime)
     end
   end
 end

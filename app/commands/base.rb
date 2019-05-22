@@ -10,6 +10,6 @@ module Commands
       @api = api
     end
 
-    def_delegators :api, :send_message, :edit_message
+    def_delegators :api, :send_message, :edit_message_text
   end
 end

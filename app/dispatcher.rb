@@ -44,10 +44,13 @@ class Dispatcher
       bot.api.answer_callback_query(callback_query_id: callback.id, text: "I can't understand you")
     end
 
-    if command == 'like'
+    case command
+    when 'like'
       # redis.publish('liker_bot', message.from.username)
       bot.api.answer_callback_query(callback_query_id: callback.id)
-    elsif command == 'more'
+    when 'schedule'
+      @commands['📆 Schedule'].call(callback)
+    when 'more'
     end
   end
 end
