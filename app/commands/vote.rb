@@ -1,6 +1,8 @@
 module Commands
   class Vote < Base
-    def call(message)
+    private
+
+    def handle_call(message)
       vote_button = Telegram::Bot::Types::InlineKeyboardMarkup.new(
         inline_keyboard: [Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Like', callback_data: { command: 'like' }.to_json)]
       )

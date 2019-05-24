@@ -9,22 +9,12 @@ module Commands
       ]]
     )
 
-    # 🕓 18:00 🎤 Hiroshi Shibata
-    # 🚩 *The Future of library dependency management of Ruby*
-
-    def call(message)
-      case message
-      when Telegram::Bot::Types::Message
-        handle_message(message)
-      when Telegram::Bot::Types::CallbackQuery
-        args = JSON.parse(message.data)['args']
-        handle_callback(message, args)
-      end
-    end
-
     private
 
-    def handle_message(message)
+    # 🕓 18:00 🎤 Hiroshi Shibata
+    # 🚩 *The Future of library dependency management of Ruby*
+    #
+    def handle_call(message)
       send_message(
         chat_id: message.chat.id,
         text: 'Choose a day:',
@@ -32,19 +22,17 @@ module Commands
       )
     end
 
-    def handle_callback(message, args)
+    def handle_callback(callback, args)
       date = Date.new(2019, 06, args.fetch('confday'))
       talks = repo.by_date(date)
 
       edit_message_text(
-        message_id: message.message.message_id,
-        chat_id: message.message.chat.id,
+        message_id: callback.message.message_id,
+        chat_id: callback.message.chat.id,
         text: talks_message(date, talks),
         parse_mode: :markdown
       )
     end
-
-
 
     def talks_message(confday, talks)
       <<~MARKDOWN

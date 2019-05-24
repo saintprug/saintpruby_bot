@@ -50,7 +50,8 @@ class Dispatcher
       bot.api.answer_callback_query(callback_query_id: callback.id)
     when 'schedule'
       @commands['📆 Schedule'].call(callback)
-    when 'more'
+    when 'jobs'
+      @commands['💵 Jobs'].call(callback)
     end
   end
 end

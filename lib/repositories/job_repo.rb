@@ -3,7 +3,7 @@ module Repositories
     include ArgsImport['rom']
 
     def by_id(id)
-      jobs.by_pk(id)
+      jobs.restrict(id: id).first
     end
 
     def all
