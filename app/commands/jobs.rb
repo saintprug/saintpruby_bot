@@ -16,11 +16,8 @@ module Commands
           chat_id: message.chat.id,
           text: text,
           parse_mode: :markdown,
-          reply_markup: Telegram::Bot::Types::InlineKeyboardMarkup.new(
-            inline_keyboard: [Telegram::Bot::Types::InlineKeyboardButton.new(
-              text: 'Show more',
-              callback_data: { command: 'jobs', args: { job_id: job.id } }.to_json
-            )]
+          reply_markup: inline_keyboard(
+            button('Show more', 'jobs', job_id: job.id)
           )
         )
       end

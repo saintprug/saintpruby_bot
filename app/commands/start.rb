@@ -1,20 +1,9 @@
 module Commands
   class Start < Base
-    MENU_KEYBOARD = Telegram::Bot::Types::ReplyKeyboardMarkup.new(keyboard:
-      [
-        [
-          Telegram::Bot::Types::KeyboardButton.new(text: '📆 Schedule'),
-          Telegram::Bot::Types::KeyboardButton.new(text: '❤️ Vote')
-        ],
-        [
-          Telegram::Bot::Types::KeyboardButton.new(text: '🎤 Speakers'),
-          Telegram::Bot::Types::KeyboardButton.new(text: '💵 Jobs')
-        ],
-        [
-          Telegram::Bot::Types::KeyboardButton.new(text: '🍻 Beer counter'),
-          Telegram::Bot::Types::KeyboardButton.new(text: '🏛 Places')
-        ],
-      ]
+    MENU_KEYBOARD = reply_keyboard(
+      [ button('📆 Schedule'), button('❤️ Vote') ],
+      [ button('🎤 Speakers'), button('💵 Jobs') ],
+      [ button('🍻 Beer counter'), button('🏛 Places') ]
     )
 
     WELCOME_TEXT = """

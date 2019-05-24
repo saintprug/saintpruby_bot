@@ -3,6 +3,7 @@ require 'forwardable'
 module Commands
   class Base
     extend Forwardable
+    include KeyboardHelpers
 
     attr_reader :api
 
