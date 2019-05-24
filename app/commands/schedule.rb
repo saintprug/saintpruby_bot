@@ -24,7 +24,7 @@ module Commands
 
     # 🕓 18:00 🎤 Hiroshi Shibata
     # 🚩 *The Future of library dependency management of Ruby*
-    # ℹ️/❤️/💩 /talk_18
+    # ℹ️/👍 /talk_18
     #
     # ...
     #
@@ -52,7 +52,7 @@ module Commands
       <<~MARKDOWN.gsub(/^\s*\n/, '')
         🕓 #{talk.datetime.strftime('%H:%M')} #{"🎤 #{talk.speaker}" if talk.speaker}
         🚩 *#{talk.title}*
-        #{"ℹ️/❤️/💩 /talk\\_#{talk.id}" if talk.speaker}
+        #{"ℹ️/👍 /talk\\_#{talk.id}" if talk.speaker}
       MARKDOWN
     end
   end

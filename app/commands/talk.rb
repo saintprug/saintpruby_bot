@@ -9,7 +9,7 @@ module Commands
     #
     # I'm going to show the features of Bundler and RubyGems and the integration plan of RubyGems and Bundler. Also I will show the issues of the current state. You can resolve them after my talk.
     #
-    # [ ❤️ (11) ] [ 💩 (2) ]
+    # [ ❤️ (11) ] [ 👍 (8) ] [ 👎 [1] ]
     #
     def handle_call(message)
       id = message.text[%r{(?<=^/talk_)\d+$}]&.to_i
@@ -33,7 +33,8 @@ module Commands
       inline_keyboard(
         [
           button('❤️', 'vote', tid: talk_id, uid: user_id, v: '❤️'),
-          button('💩', 'vote', tid: talk_id, uid: user_id, v: '💩')
+          button('👍', 'vote', tid: talk_id, uid: user_id, v: '👍'),
+          button('👎', 'vote', tid: talk_id, uid: user_id, v: '👎')
         ]
       )
     end
