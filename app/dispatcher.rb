@@ -11,7 +11,7 @@ class Dispatcher
       '❤️ Vote' => Commands::Vote.new(bot_api),
       '🎤 Speakers' => Commands::Speakers.new(bot_api),
       '💵 Jobs' => Commands::Jobs.new(bot_api),
-      '🍻 Beer counter' => Commands::Beers.new(bot_api),
+      '🍻 Drunk beer!' => Commands::Beers.new(bot_api),
       '🏛 Places' => Commands::Places.new(bot_api),
       '◀️ Back' => Commands::Back.new(bot_api)
     }

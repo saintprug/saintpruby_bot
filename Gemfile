@@ -10,6 +10,7 @@ gem 'rake'
 
 # debug
 gem 'pry'
+gem 'pry-byebug'
 
 # boot
 gem 'dotenv'
@@ -19,9 +20,10 @@ gem 'dry-system'
 gem 'redis'
 gem 'rom'
 gem 'rom-yaml'
+gem 'rom-redis', :github => 'rom-rb/rom-redis'
 
 # service api
-gem 'telegram-bot-ruby', require: 'telegram/bot'
+gem 'telegram-bot-ruby', '~> 0.9.0', require: 'telegram/bot'
 
 # fast JSON processing
 gem 'oj'

@@ -1,4 +1,5 @@
 class Jobs < ROM::Relation[:yaml]
+  gateway :default
 
   schema(infer: true) do
     attribute :id, ROM::Types::Integer
