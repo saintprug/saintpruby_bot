@@ -9,35 +9,20 @@ module Commands
     #
     # I'm going to show the features of Bundler and RubyGems and the integration plan of RubyGems and Bundler. Also I will show the issues of the current state. You can resolve them after my talk.
     #
-    # [ ❤️ (11) ] [ 👍 (8) ] [ 👎 [1] ]
-    #
     def handle_call(message)
       id = message.text[%r{(?<=^/talk_)\d+$}]&.to_i
       return nil unless id
 
       talk = repo.by_id(id)
 
-      # TODO: show vote results if user had already voted for a given talk
-      # TODO: allow users to revote
       send_message(
         chat_id: message.chat.id,
         text: talk_message(talk),
-        parse_mode: :markdown,
-        reply_markup: vote_keyboard(message.chat.id, talk.id)
+        parse_mode: :markdown
       )
     end
 
     private
-
-    def vote_keyboard(user_id, talk_id)
-      inline_keyboard(
-        [
-          button('❤️', 'vote', tid: talk_id, uid: user_id, v: '❤️'),
-          button('👍', 'vote', tid: talk_id, uid: user_id, v: '👍'),
-          button('👎', 'vote', tid: talk_id, uid: user_id, v: '👎')
-        ]
-      )
-    end
 
     def talk_message(talk)
       <<~MARKDOWN.gsub(/^\s*\n\z/, '')

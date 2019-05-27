@@ -29,7 +29,7 @@ RSpec.describe Commands::Talk do
     end
 
     it 'responds with text containing date, time, speaker, title and description' do
-      expected =        match(/June 0?1/)
+      expected = match(/June 0?1/)
                    .and(match(/12:00/))
                    .and(match(/Joan Doe/))
                    .and(match(/abrakadabra/))
@@ -37,11 +37,6 @@ RSpec.describe Commands::Talk do
       expect(api).to receive(:send_message).with(include(text: expected))
 
       command.call(message)
-    end
-
-    it 'responds with vote keyboard' do
-      pending("Let's implement vote command first")
-      fail
     end
   end
 end
