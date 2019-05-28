@@ -1,0 +1,35 @@
+version: 2.1
+
+jobs:
+  build:
+    working_directory: ~/saintpruby_bot
+    docker:
+      - image: circleci/ruby:2.6.3
+      - image: circleci/redis:5.0.3-alpine
+    steps:
+      - checkout
+
+      - restore_cache:
+          name: Bundle restore cache
+          keys:
+            - bebop-bundle-v2-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - bebop-bundle-v2-{{ .Branch }}-
+            - bebop-bundle-v2-
+      - run:
+          name: Bundle install
+          command: bundle config github.https true && bundle install --path=vendor/bundle --jobs=4 --retry=3
+      - save_cache:
+          name: Bundle save cache
+          key: bebop-bundle-v2-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          command: cp -f .env.test.example .env.test
+
+      - run:
+          command: bundle exec rspec -r rspec_junit_formatter --format progress --format RspecJunitFormatter --profile -o results/rspec/junit.xml
+
+      - store_test_results:
+          path: results
+
