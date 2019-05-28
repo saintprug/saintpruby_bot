@@ -35,3 +35,7 @@ gem 'rack'
 
 # tests
 gem 'rspec'
+
+group :ci do
+  gem 'rspec_junit_formatter'
+end
