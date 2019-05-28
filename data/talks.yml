@@ -1,100 +1,120 @@
 talks:
-  - title: '🎉🎉🎉 Doors opened'
+  - id: 1
+    title: '🎉🎉🎉 Doors opened'
     datetime: '2019-06-01T09:30:00 +0300'
     speaker:
     description:
 
-  - title: Ruby 3.0 Redux
+  - id: 2
+    title: Ruby 3.0 Redux
     datetime: '2019-06-01T11:00 +0300'
     speaker: Bozhidar Batsov
-    description: "For several years now Rubyists around the world have been fascinated by the plans for the next big Ruby release - namely Ruby 3.0. While a lot has been said about 3.0, there’s also a lot of confusion about it - the scope, the timeline,  backwards compatibility, etc.\nThis talk is an attempt to summarize everything that’s currently known about Ruby 3.0 and present it into an easily digestible format.\nWe’ll go over all the main features targeting Ruby 3.0 and many of the open questions surrounding them."
+    description: "For several years now Rubyists around the world have been fascinated by the plans for the next big Ruby release - namely Ruby 3.0. While a lot has been said about 3.0, there’s also a lot of confusion about it - the scope, the timeline,  backwards compatibility, etc.\n\n This talk is an attempt to summarize everything that’s currently known about Ruby 3.0 and present it into an easily digestible format.\n\n We’ll go over all the main features targeting Ruby 3.0 and many of the open questions surrounding them."
 
-  - title: Business logic in Ruby without frameworks, libraries and persistence
+  - id: 3
+    title: Business logic in Ruby without frameworks, libraries and persistence
     datetime: '2019-06-01T12:00 +0300'
     speaker: Andrzej Krzywda
     description: "I strongly believe that the ability of implementing business logic, separated from the framework, separated from the persistence mechanism, separated from any library - is crucial to the success of many business projects.  During the talk I want to take you for this journey with me and leave you with new knowledge that you can apply in your codebase immediately."
 
-  - title: "Thinking in graphs: Why GraphQL is not about mapping database to schema"
+  - id: 4
+    title: "Thinking in graphs: Why GraphQL is not about mapping database to schema"
     datetime: '2019-06-01T13:00 +0300'
     speaker: Dmitry Tsepelev
-    description: "When you look at GraphQL specification for a first time it feels like REST - it wants you create queries to get the data and mutations to update it, nothing new. After reimplementing your legacy API you might feel anxious - there are some new problems but no new solutions. Where did we turn wrong? GraphQL API should be designed differently to show it's true power! \nIn this talk I'll briefly discuss problems and benefits of GraphQL and then share some thoughs on how perfect schema should be designed."
+    description: "When you look at GraphQL specification for a first time it feels like REST - it wants you create queries to get the data and mutations to update it, nothing new. After reimplementing your legacy API you might feel anxious - there are some new problems but no new solutions. Where did we turn wrong? GraphQL API should be designed differently to show it's true power! \n\n In this talk I'll briefly discuss problems and benefits of GraphQL and then share some thoughs on how perfect schema should be designed."
 
-  - title: 'Moving Beyond #call: Demystifying Functional Ruby'
+  - id: 5
+    title: 'Moving Beyond #call: Demystifying Functional Ruby'
     datetime: '2019-06-01T14:00 +0300'
     speaker: Piotr Solnica
     description: "Functional Ruby doesn’t mean using class or module methods instead of instance methods. It doesn’t mean an object must only implement “call”. It’s also not about using procs for everything.  So, what does it mean? I’ll explain."
 
-  - title: Aspergers in IT
+  - id: 6
+    title: Aspergers in IT
     datetime: '2019-06-01T15:00 +0300'
     speaker: Michal Papis
-    description: "Our profession as IT specialists is relatively young one, similarly as it is with Aspargers Syndrome diagnosis. I want to show you how our profession overlaps with the syndrome and what it means for us.\n Definitely IT is a great place for “Aspies”, but is it beneficial or are there down sides to the overlap as well? Let’s embrace the overlap and with understanding it bring more to our profession as IT specialists."
+    description: "Our profession as IT specialists is relatively young one, similarly as it is with Aspargers Syndrome diagnosis. I want to show you how our profession overlaps with the syndrome and what it means for us.\n \n Definitely IT is a great place for “Aspies”, but is it beneficial or are there down sides to the overlap as well? Let’s embrace the overlap and with understanding it bring more to our profession as IT specialists."
 
-  - title: Simple distributed systems in Ruby
+  - id: 7
+    title: Simple distributed systems in Ruby
     datetime: '2019-06-01T16:00 +0300'
     speaker: Julian Pokrovsky
     description: "How much you have to know to build a complex application in Ruby? Event Sourcing, DDD, Hexagonal architecture? Functional programming? Design patterns? In this talk, we'll try to forget everything we ever heard about complex abbreviatures and get back to basic principles like single responsibility and encapsulation, on top of which we can build scalable and stable code base."
 
-  - title: 'Case Study: how we made our core process 100 times faster (at least)'
+  - id: 8
+    title: 'Case Study: how we made our core process 100 times faster (at least)'
     datetime: '2019-06-01T17:00 +0300'
     speaker: Benjamin Roth
     description: "I will tell about the project where the data of a full account is around 500MB on average.Our mission was to try to reduce the memory footprint and the speed of the whole process. Our changes lead to dramatic improvements: 100 times faster, 10 times less memory at least. We refactored the whole, twice in 6 months. Learning from our mistakes. Although specific details do not have much interest, we extracted the most relevant tips and tricks you could reuse."
 
-  - title: Between Ruby and Javascript
+  - id: 9
+    title: Between Ruby and Javascript
     datetime: '2019-06-01T18:00 +0300'
     speaker: Anna Selezniova
     description: "Ever since the web is divided into frontend and backend, we are on opposite sides. Even though we are using different languages, we have a lot in common, and we are continually inspiring each other.  This talk is a result of a little experience of the frontend developer in Ruby."
 
-  - title: '🎉🎉🎉 Afterparty!'
+  - id: 10
+    title: '🎉🎉🎉 Afterparty!'
     datetime: '2019-06-01T19:00 +0300'
     speaker:
     description:
 
-  - title: '🎉🎉🎉 Doors opened'
+  - id: 11
+    title: '🎉🎉🎉 Doors opened'
     datetime: '2019-06-02T10:00 +0300'
     speaker:
     description:
 
-  - title: Anything new, Rails 6?
+  - id: 12
+    title: Anything new, Rails 6?
     datetime: '2019-06-02T11:00 +0300'
     speaker: Nickolay Sverchkov
     description: "Rails 6 is expected to be released on April 30 at RailsConf 2019 (if you are reading this in the future, that had already happened).  Instead of going over each and every new feature, we will take a more general look at the direction where Rails is heading and  why do we need this new release that does not promise anything world-shaking."
 
-  - title: Embrace multi-model thinking!
+  - id: 13
+    title: Embrace multi-model thinking!
     datetime: '2019-06-02T12:00 +0300'
     speaker: Ivan Nemytchenko
-    description: "We are experienced developers, who continuously learn new things and try them in practice. Yet, when we deal with big code bases, we often feel we don’t control the situation.I realized that we are often too focused on frameworks and tools. We don’t see the forest through the trees. \nIn this talk I want to unzoom us from the trees and look at a work of a regular Rails developer from several perspectives,  System thinking, Types of the work in your app; Building blocks vs thing being built, Entry point pressure, State, Side-effects\nThis helped me to get answers on a lot of questions"
+    description: "We are experienced developers, who continuously learn new things and try them in practice. Yet, when we deal with big code bases, we often feel we don’t control the situation.I realized that we are often too focused on frameworks and tools. We don’t see the forest through the trees. \n\n In this talk I want to unzoom us from the trees and look at a work of a regular Rails developer from several perspectives,  System thinking, Types of the work in your app; Building blocks vs thing being built, Entry point pressure, State, Side-effects\n\n This helped me to get answers on a lot of questions"
 
-  - title: How to test microservices and stay sane
+  - id: 14
+    title: How to test microservices and stay sane
     datetime: '2019-06-02T13:00 +0300'
     speaker: Tatiana Shepeleva
     description: "Microservices shine in many aspects, but testability. Whenever you deploy a service, no matter how small it is, as long as it has dependencies, you have to keep them in mind. By definition, microservices have lots of dependencies and makes you appreciate how easy it is to test integration in a monolithic code base.\nIn this talk, I’ll show the concept of contract testing that makes testing microservices a breeze. I'll do it on an example of Pact, an open source library with adapters for many popular languages."
 
-  - title: Orchestration over Disorganization
+  - id: 15
+    title: Orchestration over Disorganization
     datetime: '2019-06-02T14:00 +0300'
     speaker: Nick Sutterer
-    description: "What is it about?\nMostly Trailblazer, but more about all the cool new features, and comparing it standard Ruby. We're close to 2.1 release with new PRO plan, paid gems, website, etc."
+    description: "What is it about?\n\n Mostly Trailblazer, but more about all the cool new features, and comparing it standard Ruby. We're close to 2.1 release with new PRO plan, paid gems, website, etc."
 
-  - title: How to hijack, proxy and smuggle sockets with Rack/Ruby
+  - id: 16
+    title: How to hijack, proxy and smuggle sockets with Rack/Ruby
     datetime: '2019-06-02T15:00 +0300'
     speaker: David Halasz
     description: "Rack is a super simple, yet a very versatile tool to implement web servers in Ruby. It beats under the hood of Rails, but it can do much more.\nThe socket hijacking has been implemented into Rack to support WebSockets by bypassing the middleware and so not blocking the worker threads. Together with the HTTP Upgrade requests, this can be used to send regular TCP traffic through an open HTTP connection. This talk is about leveraging socket hijacking to smuggle an SSH connection through an HTTP session using Rack. All this by using Ruby, a language that’s not ideal for doing concurrency and IO."
 
-  - title: Typical Rails app in Kubernetes - Tips & Tricks
+  - id: 17
+    title: Typical Rails app in Kubernetes - Tips & Tricks
     datetime: '2019-06-02T16:00 +0300'
     speaker: Andrey Voronkov
-    description: "In this talk, I would like to cover some obscure moments on the junction of Rails and Kubernetes specifics. We will discuss topics like:\n- Dockerizing the app\n- Rails Migrations\n- Cron tasks\n- SSL Certificates\n- Secrets and Environment variables\n- Automatic release upgrades\n- ... And more"
+    description: "In this talk, I would like to cover some obscure moments on the junction of Rails and Kubernetes specifics. We will discuss topics like:\n\n - Dockerizing the app\n- Rails Migrations\n- Cron tasks\n- SSL Certificates\n- Secrets and Environment variables\n- Automatic release upgrades\n- ... And more"
 
-  - title: The Future of library dependency management of Ruby
+  - id: 18
+    title: The Future of library dependency management of Ruby
     datetime: '2019-06-02T17:00 +0300'
     speaker: Hiroshi Shibata
-    description: "I did merge Bundler into Ruby core repository and shipped bundler as standard library on Ruby 2.6. It provides any fresh installation of Ruby with gem and bundle commands.\nI'm going to show the features of Bundler and RubyGems and the integration plan of RubyGems and Bundler. Also I will show the issues of the current state. You can resolve them after my talk."
+    description: "I did merge Bundler into Ruby core repository and shipped bundler as standard library on Ruby 2.6. It provides any fresh installation of Ruby with gem and bundle commands.\n\n I'm going to show the features of Bundler and RubyGems and the integration plan of RubyGems and Bundler. Also I will show the issues of the current state. You can resolve them after my talk."
 
-  - title: What's next, ruby community?
+  - id: 19
+    title: What's next, ruby community?
     datetime: '2019-06-02T18:00 +0300'
     speaker: Ivan Shamatov & Sergey Sergeenko
     description:
 
-  - title: '🎉 Closing words'
+  - id: 20
+    title: '🎉 Closing words'
     datetime: '2019-06-02T19:00 +0300'
     speaker:
     description:

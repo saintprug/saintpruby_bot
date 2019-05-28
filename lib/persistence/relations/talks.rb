@@ -2,6 +2,7 @@ class Talks < ROM::Relation[:yaml]
   gateway :default
 
   schema do
+    attribute :id, ROM::Types::Integer
     attribute :title, ROM::Types::String
     attribute :speaker, ROM::Types::String
     attribute :description, ROM::Types::String

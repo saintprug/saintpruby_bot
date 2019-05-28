@@ -13,7 +13,8 @@ class Dispatcher
       '💵 Jobs' => Commands::Jobs.new(bot_api),
       '🍻 Drunk beer!' => Commands::Beers.new(bot_api),
       '🏛 Places' => Commands::Places.new(bot_api),
-      '◀️ Back' => Commands::Back.new(bot_api)
+      '◀️ Back' => Commands::Back.new(bot_api),
+      '/talk' => Commands::Talk.new(bot_api),
     }
   end
 
@@ -31,7 +32,7 @@ class Dispatcher
   attr_reader :bot, :commands
 
   def dispatch_message(message)
-    command = commands.fetch(message.text, UNKNOWN_COMMAND)
+    command = commands.fetch(message.text.sub(/_\d+$/, ''), UNKNOWN_COMMAND)
     return bot.api.send_message(chat_id: message.chat.id, text: UNKNOWN_RESPONSE) if command == UNKNOWN_COMMAND
 
     command.call(message)
