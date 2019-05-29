@@ -1,5 +1,7 @@
 module Commands
   class Vote < Base
+    include Import[:redis]
+
     private
 
     def handle_call(message)
