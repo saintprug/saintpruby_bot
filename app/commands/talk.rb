@@ -10,10 +10,8 @@ module Commands
     # I'm going to show the features of Bundler and RubyGems and the integration plan of RubyGems and Bundler. Also I will show the issues of the current state. You can resolve them after my talk.
     #
     def handle_call(message)
-      id = message.text[%r{(?<=^/talk_)\d+$}]&.to_i
-      return nil unless id
-
-      talk = repo.by_id(id)
+      id = message.text[%r{(?<=^/talk_)\d+$}]&.to_i || raise(FallbackError)
+      talk = repo.by_id(id) || raise(FallbackError)
 
       send_message(
         chat_id: message.chat.id,
