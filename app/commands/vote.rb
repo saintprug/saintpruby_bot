@@ -11,7 +11,7 @@ module Commands
     end
 
     def handle_callback(callback, args)
-      # redis.publish('liker_bot', message.from.username)
+      redis.publish('liker_bot', message.from.username)
       api.answer_callback_query(callback_query_id: callback.id)
     end
   end
