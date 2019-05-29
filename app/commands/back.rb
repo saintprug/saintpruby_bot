@@ -1,3 +1,5 @@
+require_relative 'start'
+
 module Commands
   class Back < Start
     private
