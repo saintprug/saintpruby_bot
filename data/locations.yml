@@ -1,0 +1,30 @@
+locations:
+  conference:
+    lat: 59.981662
+    lon: 30.214774
+    description: |
+      *——— 📌 Conference ———*
+
+      *JetBrains office center*
+
+      Primorsky prospect, 70
+      (The building is newly built so it may not show up on your map)
+
+      *Contacts:*
+
+      ☎️ +7 (921) 186-79-99
+      📧 info@spbrubyconf.ru
+      💬 [telegram](https://t.me/saintprug) | [twitter](https://twitter.com/saintpruby)
+  afterparty:
+    lat: 59.981832
+    lon: 30.210642
+    description: |
+      *——— 📌 Afterparty ———*
+
+      *Papasha Klauss pub*
+
+      Primorskiy Prospekt, 72
+      Piterland shopping mall, 4th floor
+
+      🕓 June, 1, 19:00
+      🌐 [website](https://papashaclauss.ru) | [instagram](https://www.instagram.com/papasha_clauss/)
