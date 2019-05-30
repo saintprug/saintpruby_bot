@@ -34,7 +34,10 @@ gem 'iodine'
 gem 'rack'
 
 # tests
-gem 'rspec'
+group :test do
+  gem 'rspec'
+  gem 'timecop'
+end
 
 group :ci do
   gem 'rspec_junit_formatter'

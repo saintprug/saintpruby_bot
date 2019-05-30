@@ -29,7 +29,7 @@ module Services
 
     def user_total_by_last_day(user_id)
       repo.find_by_user_id(user_id).drunk_at.select do |drunk_at|
-        drunk_at >= (Time.now - 60 * 60 * 8)
+        drunk_at >= (Time.now - 60 * 60 * 11)
       end.count
     end
 
@@ -40,7 +40,8 @@ module Services
     end
 
     def drinks_fast?(user_id)
-      (last(user_id) + THROTTLING_BEER_TIMEOUT) > Time.now
+      last = last(user_id)
+      last && (last(user_id) + THROTTLING_BEER_TIMEOUT) > Time.now
     end
 
     def time_to_drink(user_id)
@@ -48,7 +49,7 @@ module Services
     end
 
     def scale_of_drunkness(user_id)
-      scale = SCALE_OF_DRUNKNESS[user_total(user_id)]
+      scale = SCALE_OF_DRUNKNESS[user_total_by_last_day(user_id)]
       return '🥴 Sorry fellow, I am too drunk. Count it yourself 🥴' if scale.nil?
       scale.sample
     end

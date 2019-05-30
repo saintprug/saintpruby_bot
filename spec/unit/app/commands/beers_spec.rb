@@ -1,13 +1,39 @@
 RSpec.describe Commands::Beers do
+  before { Timecop.freeze(freeze_time) }
+  after { Timecop.return }
+
   describe '#call' do
     let(:api) { double('api', send_message: nil) }
     let(:chat) { Telegram::Bot::Types::Chat.new(id: 1) }
     let(:message) { Telegram::Bot::Types::Message.new(chat: chat) }
     let(:beer_service) { instance_double(Services::Beer) }
 
-    subject { described_class.new(api, beer_service: beer_service).call(message) }
+    subject(:beer!) { described_class.new(api, beer_service: beer_service).call(message) }
 
-    context 'user drinks too fast' do
+    context 'when user reports a drink at a wrong time' do
+      let(:freeze_time) { Time.parse("2019-05-30T#{rand(6..19)}:00:00") }
+
+      it 'reports that the time is wrong' do
+        expect(api).to receive(:send_message).with(
+          chat_id: 1,
+          parse_mode: :markdown,
+          text: satisfy do |text|
+            described_class::WRONG_TIME_MESSAGES.include?(text)
+          end
+        )
+
+        beer!
+      end
+
+      it 'does not change beer count' do
+        expect(beer_service).not_to receive(:drink)
+        beer!
+      end
+    end
+
+    context 'when user drinks too fast' do
+      let(:freeze_time) { Time.parse('2019-05-30T20:00:00') }
+
       before do
         allow(beer_service).to receive(:last).and_return(Time.now)
         allow(beer_service).to receive(:drinks_fast?).and_return(true)
@@ -18,14 +44,21 @@ RSpec.describe Commands::Beers do
       it 'returns warning message'do
         expect(api).to receive(:send_message).with(
           chat_id: 1,
-          text: /we have a timeout/,
+          text: /timeout/,
           parse_mode: :markdown
         )
-        subject
+
+        beer!
+      end
+
+      it 'does not change beer count' do
+        expect(beer_service).not_to receive(:drink)
+        beer!
       end
     end
 
     context 'user drinks normal mode' do
+      let(:freeze_time) { Time.parse('2019-05-30T20:00:00') }
       let(:joke) { 'How many fingers are there?' }
 
       before do
