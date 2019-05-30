@@ -12,4 +12,4 @@ schedule_lightnings:
   - id: 6
     datetime: '2019-06-02T14:25:00 +0300'
   - id: 7
-    datetime: '2019-06-02T15:30:00 +0300'
+    datetime: '2019-06-02T14:30:00 +0300'
