@@ -8,10 +8,13 @@ module Commands
       chat_id = message.chat.id
 
       if beer_service.last(chat_id) && beer_service.drinks_fast?(chat_id)
-        message = ['*Easy, you*', '*Who drives you home*?', '*What are you, Homer Simpson?*'].sample
+        message = <<~MARKDOWN
+          ⏳ I don't believe you are drinking that fast ⌛ (we have a timeout 5 minutes between glasses, try again it after #{next_drink_adviced_time(chat_id)})
+          _Already drunk today: #{'🍻' * beer_service.user_total_by_last_day(chat_id)}_
+        MARKDOWN
       else
         beer_service.drink(chat_id)
-        message = "#{beer_service.scale_of_drunkness(chat_id)}.\nAlready drunk: #{'🍻' * beer_service.user_total(chat_id)}"
+        message = "#{beer_service.scale_of_drunkness(chat_id)}.\n_Already drunk today: #{'🍻' * beer_service.user_total_by_last_day(chat_id)}_"
       end
 
       send_message(
@@ -19,6 +22,10 @@ module Commands
         text: message,
         parse_mode: :markdown
       )
+    end
+
+    def next_drink_adviced_time(chat_id)
+      beer_service.time_to_drink(chat_id).localtime('+03:00').strftime('%T')
     end
   end
 end
