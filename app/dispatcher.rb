@@ -9,7 +9,7 @@ class Dispatcher
       '🎤 Speakers' => Commands::Speakers.new(bot.api),
       '💵 Jobs' => Commands::Jobs.new(bot.api),
       '🍻 Drunk beer!' => Commands::Beers.new(bot.api),
-      '🏛 Places' => Commands::Places.new(bot.api),
+      '📌 Locations' => Commands::Locations.new(bot.api),
       '◀️ Back' => Commands::Back.new(bot.api),
       '/talk' => Commands::Talk.new(bot.api),
       '⚡ Lightnings' => Commands::LightningTalks.new(bot.api),
@@ -22,7 +22,8 @@ class Dispatcher
       'schedule' => commands['📆 Schedule'],
       'jobs' => commands['💵 Jobs'],
       'lightning' => commands['📆 Lightnings schedule'],
-      'book' =>  commands['🎤 Book a lightning talk']
+      'book' =>  commands['🎤 Book a lightning talk'],
+      'locations' => commands['📌 Locations']
     }
   end
 
