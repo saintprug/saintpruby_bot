@@ -12,12 +12,17 @@ class Dispatcher
       '🏛 Places' => Commands::Places.new(bot.api),
       '◀️ Back' => Commands::Back.new(bot.api),
       '/talk' => Commands::Talk.new(bot.api),
+      '⚡ Lightnings' => Commands::LightningTalks.new(bot.api),
+      '📆 Lightnings schedule' => Commands::LightningTalksSchedule.new(bot.api),
+      '🎤 Book a lightning talk' => Commands::BookLightningTalks.new(bot.api)
     }
 
     @callbacks = {
       'vote' => commands['❤️ Vote'],
       'schedule' => commands['📆 Schedule'],
       'jobs' => commands['💵 Jobs'],
+      'lightning' => commands['📆 Lightnings schedule'],
+      'book' =>  commands['🎤 Book a lightning talk']
     }
   end
 
