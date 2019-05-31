@@ -12,9 +12,10 @@ class Dispatcher
       '📌 Locations' => Commands::Locations.new(bot.api),
       '◀️ Back' => Commands::Back.new(bot.api),
       '/talk' => Commands::Talk.new(bot.api),
-      '⚡ Lightnings' => Commands::LightningTalks.new(bot.api),
-      '📆 Lightnings schedule' => Commands::LightningTalksSchedule.new(bot.api),
-      '🎤 Book a lightning talk' => Commands::BookLightningTalks.new(bot.api)
+      '⚡ Lightnings' => Commands::Lightnings.new(bot.api),
+      '📆 Lightnings schedule' => Commands::LightningTalks::Schedule.new(bot.api),
+      '🎤 Book a lightning talk' => Commands::LightningTalks::Book.new(bot.api),
+      '🗙 Cancel my booking' => Commands::LightningTalks::CancelBooking.new(bot.api),
     }
 
     @callbacks = {
@@ -23,7 +24,8 @@ class Dispatcher
       'jobs' => commands['💵 Jobs'],
       'lightning' => commands['📆 Lightnings schedule'],
       'book' =>  commands['🎤 Book a lightning talk'],
-      'locations' => commands['📌 Locations']
+      'locations' => commands['📌 Locations'],
+      'back' => commands['◀️ Back'],
     }
   end
 

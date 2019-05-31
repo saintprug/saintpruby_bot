@@ -20,7 +20,7 @@ module Commands
         chat_id: message.chat.id,
         text: WELCOME_TEXT,
         parse_mode: :markdown,
-        reply_markup: MENU_KEYBOARD
+        reply_markup: Keyboards::MainReplyKeyboard.new.call
       )
     end
   end

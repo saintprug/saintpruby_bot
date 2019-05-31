@@ -20,5 +20,13 @@ module Repositories
     def create(attributes)
       lightnings.map_to(Entities::BookedLightning).command(:create).call(attributes)
     end
+
+    def delete(datetime)
+      lightnings.with(auto_map: false, auto_struct: false).del(datetime.iso8601).one
+    end
+
+    def by_username(username)
+      all.find { |lightning| lightning.username == username }
+    end
   end
 end

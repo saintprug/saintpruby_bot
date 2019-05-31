@@ -4,6 +4,7 @@ module Commands
   class Base
     extend Forwardable
     include KeyboardHelpers
+    include ContextHelpers
 
     attr_reader :api
 
@@ -23,7 +24,8 @@ module Commands
 
     private
 
-    def_delegators :api, :send_message, :edit_message_text, :send_location
+    def_delegators :api, :send_message, :edit_message_text,
+                         :send_location, :delete_message
 
     def handle_call(message)
       raise NotImplementedError, "you have to implement #{self.class.name}#handle_call"
