@@ -8,7 +8,7 @@ class Dispatcher
       '❤️ Vote' => Commands::Vote.new(bot.api),
       '🎤 Speakers' => Commands::Speakers.new(bot.api),
       '💵 Jobs' => Commands::Jobs.new(bot.api),
-      '🍻 Drunk beer!' => Commands::Beers.new(bot.api),
+      '🍻 Beer-in!' => Commands::Beers.new(bot.api),
       '📌 Locations' => Commands::Locations.new(bot.api),
       '◀️ Back' => Commands::Back.new(bot.api),
       '/talk' => Commands::Talk.new(bot.api),

@@ -1,12 +1,5 @@
 module Commands
   class Start < Base
-    MENU_KEYBOARD = reply_keyboard(
-      [ button('📆 Schedule'), button('❤️ Vote') ],
-      [ button('🎤 Speakers'), button('💵 Jobs') ],
-      [ button('🍻 Drunk beer!'), button('📌 Locations') ],
-      [ button('⚡ Lightnings') ]
-    )
-
     WELCOME_TEXT = """
       💎 Hi wild Rubyist! I'm Saint P Rubyconf Bot 💎
 
