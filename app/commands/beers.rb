@@ -46,7 +46,7 @@ module Commands
     def too_fast_message(chat_id)
       <<~MARKDOWN
         ⏳ I don't believe you are drinking that fast ⌛
-        (we have a 5-minute timeout between glasses, try again after #{next_drink_adviced_time(chat_id)})
+        (we have a 60 second timeout between glasses, try again after #{next_drink_adviced_time(chat_id)})
         _Already drunk today: #{drunkness_scale(chat_id)}_
       MARKDOWN
     end
