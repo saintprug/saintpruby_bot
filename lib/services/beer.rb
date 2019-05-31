@@ -2,7 +2,7 @@ module Services
   class Beer
     include Import[repo: 'repositories.beer_repo']
 
-    THROTTLING_BEER_TIMEOUT = 60 * 5 # 5 minutes
+    THROTTLING_BEER_TIMEOUT = 60 # 1 minute
 
     SCALE_OF_DRUNKNESS = {
       1 => ['🇷🇺 In Russia we say: mezdu pervoi i vtoroi pererivchik nebolshoi 🇷🇺', '💫 Good start! 💫'],

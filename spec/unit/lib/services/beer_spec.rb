@@ -78,7 +78,7 @@ RSpec.describe Services::Beer do
   end
 
   describe '#drinks_fast' do
-    let(:last_beer) { Entities::DrunkBeer.new(user_id: 'baz', drunk_at: [stringify_time(Time.now - 3 * 60)]) }
+    let(:last_beer) { Entities::DrunkBeer.new(user_id: 'baz', drunk_at: [stringify_time(Time.now - 50)]) }
 
     before do
       allow(beer_service).to receive(:last).and_return(last_beer.drunk_at.first)
