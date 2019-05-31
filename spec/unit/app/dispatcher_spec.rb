@@ -44,10 +44,10 @@ RSpec.describe Dispatcher do
 
     context 'if recognized command raises FallbackError' do
       let(:command_class) { Commands::Talk }
-      let(:command_name) { '\talk_123' }
+      let(:command_name) { '/talk_123' }
 
       it 'executes fallback command' do
-        allow(command).to receive(:call).and_raise(Commands::FallbackError)
+        expect(command).to receive(:call).and_raise(Commands::FallbackError)
         expect(fallback_command).to receive(:call).with(message)
 
         dispatcher.call(message)
@@ -90,10 +90,10 @@ RSpec.describe Dispatcher do
 
     context 'if recognized callback raises FallbackError' do
       let(:command_class) { Commands::Vote }
-      let(:callback_name) { '❤️ Vote' }
+      let(:callback_name) { 'vote' }
 
       it 'executes fallback command' do
-        allow(command).to receive(:call).and_raise(Commands::FallbackError)
+        expect(command).to receive(:call).and_raise(Commands::FallbackError)
         expect(fallback_command).to receive(:call).with(callback)
 
         dispatcher.call(callback)

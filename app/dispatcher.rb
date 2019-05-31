@@ -45,7 +45,7 @@ class Dispatcher
     handler = commands.fetch(command_name, fallback)
 
     handler.call(message)
-  rescue Commands::UnexpectedInputError
+  rescue Commands::FallbackError
     fallback.call(message)
   end
 
@@ -54,7 +54,7 @@ class Dispatcher
     handler = callbacks.fetch(callback_name, fallback)
 
     handler.call(callback)
-  rescue JSON::ParserError, Commands::UnexpectedInputError
+  rescue JSON::ParserError, Commands::FallbackError
     fallback.call(callback)
   end
 end
