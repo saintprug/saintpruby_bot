@@ -16,9 +16,7 @@ RSpec.describe Commands::Beers do
           expect(api).to receive(:send_message).with(
             chat_id: 1,
             parse_mode: :markdown,
-            text: satisfy do |text|
-              described_class::WRONG_TIME_MESSAGES.include?(text)
-            end
+            text: match(/from 19:00 till 6:00/)
           )
 
           beer!

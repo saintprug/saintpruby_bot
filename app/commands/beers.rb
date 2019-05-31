@@ -37,7 +37,10 @@ module Commands
     end
 
     def wrong_time_message
-      WRONG_TIME_MESSAGES.sample
+      <<~MARKDOWN
+        #{WRONG_TIME_MESSAGES.sample}
+        _(This command works from 19:00 till 6:00)_
+      MARKDOWN
     end
 
     def too_fast_message(chat_id)
