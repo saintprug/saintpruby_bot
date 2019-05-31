@@ -1,14 +1,17 @@
 jobs:
   - id: 0
-    title: 'Super duper mega job'
-    company: 'Awesome company'
-    location: 'New York'
-    short_description: 'short job description'
-    full_description: 'and some more detailed info'
+    title: 'Evrone looking for a talents!'
+    company: 'Evrone'
+    location: 'Remote'
+    short_description: '#ruby, #fulltime, #remote, #evrone, #jobs'
+    full_description: "Hi there! If you've been waiting for a chance to:
+      - work from anywhere in the world;
+      - enjoy proper workflow while keeping focus on your tasks;
+      - break out of the conveyor monotony;
+      - leave bloody enterprise and endless rework of same things behind;
+      - be heard by colleagues;
+      - work with those who care
 
-  - id: 1
-    title: 'Mega awesome job'
-    company: 'SpaceX'
-    location: 'Saint P'
-    short_description: 'short job description'
-    full_description: 'and some more detailed info'
+      Then welcome to Evrone!
+
+      If you feel yourself more like extrovert, text @jezo4ka or search for the Evrone guys in bright T-shirts on the stand. You can first take part in the sphero-race and get some snacks and then confess that you are looking for a job if you are. And if you, like many guys in Evrone, are a bit introvert, then simply visit jobs.evrone.com/ru, we will contact you."
