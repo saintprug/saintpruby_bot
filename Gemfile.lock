@@ -127,6 +127,7 @@ GEM
       inflecto
       virtus
     thread_safe (0.3.6)
+    timecop (0.9.1)
     transproc (1.0.3)
     virtus (1.0.5)
       axiom-types (~> 0.1)
@@ -154,6 +155,7 @@ DEPENDENCIES
   rspec
   rspec_junit_formatter
   telegram-bot-ruby (~> 0.9.0)
+  timecop
 
 RUBY VERSION
    ruby 2.6.3p62

@@ -94,7 +94,7 @@ RSpec.describe Services::Beer do
       Entities::DrunkBeer.new(
         user_id: 'foo',
         drunk_at: [
-          stringify_time(Time.now - 60 * 60 * 10),
+          stringify_time(Time.now - 60 * 60 * 12),
           stringify_time(Time.now - 60 * 60 * 7),
           stringify_time(Time.now)
         ]
@@ -105,7 +105,7 @@ RSpec.describe Services::Beer do
       allow(beer_repo).to receive(:find_by_user_id).and_return(beer)
     end
 
-    it 'returns boolean' do
+    it 'returns integer' do
       expect(beer_service.user_total_by_last_day(user_id)).to eq 2
     end
   end
