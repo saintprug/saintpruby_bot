@@ -11,28 +11,38 @@ RSpec.describe Commands::Beers do
     subject(:beer!) { described_class.new(api, beer_service: beer_service).call(message) }
 
     context 'when user reports a drink at a wrong time' do
-      let(:freeze_time) { Time.parse("2019-05-30T#{rand(6..19)}:00:00") }
+      shared_examples 'refuses to count beers' do
+        it 'reports that the time is wrong' do
+          expect(api).to receive(:send_message).with(
+            chat_id: 1,
+            parse_mode: :markdown,
+            text: satisfy do |text|
+              described_class::WRONG_TIME_MESSAGES.include?(text)
+            end
+          )
 
-      it 'reports that the time is wrong' do
-        expect(api).to receive(:send_message).with(
-          chat_id: 1,
-          parse_mode: :markdown,
-          text: satisfy do |text|
-            described_class::WRONG_TIME_MESSAGES.include?(text)
-          end
-        )
+          beer!
+        end
 
-        beer!
+        it 'does not change beer count' do
+          expect(beer_service).not_to receive(:drink)
+          beer!
+        end
       end
 
-      it 'does not change beer count' do
-        expect(beer_service).not_to receive(:drink)
-        beer!
+      context 'lower boundary' do
+        let(:freeze_time) { Time.parse("2019-05-30T06:00:00+0300") }
+        include_examples 'refuses to count beers'
+      end
+
+      context 'upper boundary' do
+        let(:freeze_time) { Time.parse("2019-05-30T18:59:59+0300") }
+        include_examples 'refuses to count beers'
       end
     end
 
     context 'when user drinks too fast' do
-      let(:freeze_time) { Time.parse('2019-05-30T20:00:00') }
+      let(:freeze_time) { Time.parse('2019-05-30T20:00:00+0300') }
 
       before do
         allow(beer_service).to receive(:last).and_return(Time.now)
@@ -58,7 +68,6 @@ RSpec.describe Commands::Beers do
     end
 
     context 'user drinks normal mode' do
-      let(:freeze_time) { Time.parse('2019-05-30T20:00:00') }
       let(:joke) { 'How many fingers are there?' }
 
       before do
@@ -69,13 +78,26 @@ RSpec.describe Commands::Beers do
         allow(beer_service).to receive(:user_total_by_last_day).and_return(10)
       end
 
-      it 'returns joke'do
-        expect(api).to receive(:send_message).with(
-          chat_id: 1,
-          text: /#{joke}/,
-          parse_mode: :markdown
-        )
-        subject
+      shared_examples 'returns a joke' do
+        it 'returns a joke'do
+          expect(api).to receive(:send_message).with(
+            chat_id: 1,
+            text: /#{joke}/,
+            parse_mode: :markdown
+          )
+
+          beer!
+        end
+      end
+
+      context 'lower time boundary' do
+        let(:freeze_time) { Time.parse('2019-05-30T19:00:01+0300') }
+        include_examples 'returns a joke'
+      end
+
+      context 'upper time boundary' do
+        let(:freeze_time) { Time.parse('2019-05-30T05:59:59+0300') }
+        include_examples 'returns a joke'
       end
     end
   end

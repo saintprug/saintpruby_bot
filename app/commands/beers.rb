@@ -29,7 +29,7 @@ module Commands
     end
 
     def wrong_time?
-      (6..19).cover?(Time.now.getlocal('+03:00').hour)
+      (6..18).cover?(Time.now.getlocal('+03:00').hour)
     end
 
     def drinks_too_fast?(chat_id)
