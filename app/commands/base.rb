@@ -25,7 +25,7 @@ module Commands
     private
 
     def_delegators :api, :send_message, :edit_message_text,
-                         :send_location, :delete_message
+                         :send_location, :delete_message, :send_photo
 
     def handle_call(message)
       raise NotImplementedError, "you have to implement #{self.class.name}#handle_call"
