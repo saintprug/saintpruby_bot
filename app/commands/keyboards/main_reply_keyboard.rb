@@ -7,7 +7,7 @@ module Commands
         reply_keyboard(
           [ button('📆 Schedule'), button('❤️ Vote') ],
           [ button('🎤 Speakers'), button('💵 Jobs') ],
-          [ button('🍻 Drunk beer!'), button('📌 Locations') ],
+          [ button('🍻 Beer-in!'), button('📌 Locations') ],
           [ button('⚡ Lightnings') ]
         )
       end
