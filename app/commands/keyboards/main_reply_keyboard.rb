@@ -8,7 +8,7 @@ module Commands
           [ button('📆 Schedule'), button('❤️ Vote') ],
           [ button('🎤 Speakers'), button('💵 Jobs') ],
           [ button('🍻 Beer-in!'), button('📌 Locations') ],
-          [ button('⚡ Lightnings') ]
+          [ button('⚡ Lightnings'), button('🤓 Rubizza') ]
         )
       end
     end

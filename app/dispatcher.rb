@@ -17,6 +17,7 @@ class Dispatcher
       '📆 Lightnings schedule' => Commands::LightningTalks::Schedule.new(bot.api),
       '🎤 Book a lightning talk' => Commands::LightningTalks::Book.new(bot.api),
       '🗙 Cancel my booking' => Commands::LightningTalks::CancelBooking.new(bot.api),
+      '🤓 Rubizza' => Commands::Rubizza.new(bot.api)
     }
 
     @callbacks = {
