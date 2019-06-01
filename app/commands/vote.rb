@@ -7,8 +7,8 @@ module Commands
     def handle_call(message)
       send_message(
         chat_id: message.chat.id,
-        text: 'Like this talk',
-        reply_markup: inline_keyboard(button('Like', 'vote'))
+        text: 'Press to like an ongoing talk',
+        reply_markup: inline_keyboard(button('❤️🧡💛💚💙💜', 'vote'))
       )
     end
 
