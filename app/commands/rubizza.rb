@@ -18,7 +18,7 @@ module Commands
         parse_mode: :markdown,
         chat_id: message.chat.id,
         caption: '*———💎😈 Ruby survival camp 😈💎 ———*',
-        photo: 'AgADAgAD-6kxG4ajkUtxDL9B-sIj3SdKOQ8ABC3GymTHlXixJUIGAAEC',
+        photo: 'https://pp.userapi.com/c841629/v841629196/1b9a/RJZWFgu4_2o.jpg',
         reply_markup: SELECTION_KEYBOARD
       )
     end
