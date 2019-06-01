@@ -45,7 +45,7 @@ class Dispatcher
   attr_reader :commands, :callbacks, :fallback
 
   def dispatch_message(message)
-    command_name = message.text.sub(/_\d+$/, '')
+    command_name = message.text&.sub(/_\d+$/, '')
     handler = commands.fetch(command_name, fallback)
 
     handler.call(message)
