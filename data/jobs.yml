@@ -4,7 +4,9 @@ jobs:
     company: 'Evrone'
     location: 'Remote'
     short_description: '#ruby, #fulltime, #remote, #evrone, #jobs'
-    full_description: "Hi there! If you've been waiting for a chance to:
+    full_description: |
+      Hi there! If you've been waiting for a chance to:
+
       - work from anywhere in the world;
       - enjoy proper workflow while keeping focus on your tasks;
       - break out of the conveyor monotony;
@@ -14,4 +16,15 @@ jobs:
 
       Then welcome to Evrone!
 
-      If you feel yourself more like extrovert, text @jezo4ka or search for the Evrone guys in bright T-shirts on the stand. You can first take part in the sphero-race and get some snacks and then confess that you are looking for a job if you are. And if you, like many guys in Evrone, are a bit introvert, then simply visit jobs.evrone.com/ru, we will contact you."
+      If you feel yourself more like extrovert, text @jezo4ka or search for the Evrone guys in bright T-shirts on the stand. You can first take part in the sphero-race and get some snacks and then confess that you are looking for a job if you are. And if you, like many guys in Evrone, are a bit introvert, then simply visit jobs.evrone.com/ru, we will contact you.
+  - id: 1
+    title: Come meet Toptal!
+    company: Toptal
+    location: Remote
+    short_description: '#ruby, #fulltime, #remote, #toptal'
+    full_description: |
+      Working at Toptal is like this conference. You get to meet amazing people, learn about incredible topics, and solve tough challenges, but the fun doesn’t end there. Consider all of the people you meet at this conference and say to yourself, “I would love to work with you, but we don’t live near each other.”
+
+      At Toptal, we are all remote. You can shape your team without thinking about the location of the office. We have 170+ engineers building a platform that enables companies and talent to connect with a focus around quality. Ruby on Rails powers a lot of our infrastructure and enables us to shape the future of work.
+
+      You’ll see a few of us speaking this weekend including Tatiana Shepeleva, Michal Papis, and Bozhidar Batsov. Please introduce yourself and share what brought you to this conference. We’ll probably have a lot to talk about.

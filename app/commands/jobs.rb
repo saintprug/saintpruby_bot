@@ -7,8 +7,8 @@ module Commands
       repo.all.each do |job|
         text =  <<~MARKDOWN
           *#{job.title}*
-          Company: #{job.company}
-          Location: #{job.location}
+          *Company:* #{job.company}
+          *Location:* #{job.location}
           #{job.short_description}
         MARKDOWN
 
@@ -28,8 +28,9 @@ module Commands
 
       text = <<~MARKDOWN
         *#{job.title}*
-        Company: #{job.company}
-        Location: #{job.location}
+        *Company:* #{job.company}
+        *Location:* #{job.location}
+
         #{job.full_description}
       MARKDOWN
 
