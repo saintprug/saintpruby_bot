@@ -21,12 +21,10 @@ module Commands
         handle_call(message)
       when Telegram::Bot::Types::CallbackQuery
         args = JSON.parse(message.data)['args']
-        begin
-          handle_callback(message, args)
-        rescue Telegram::Bot::Exceptions::ResponseError => e
-          logger.error("Error: #{e.message}\n#{e.backtrace.join("\n")}")
-        end
+        handle_callback(message, args)
       end
+    rescue Telegram::Bot::Exceptions::ResponseError => e
+      logger.error("Error: #{e.message}\n#{e.backtrace.join("\n")}")
     end
 
     private
