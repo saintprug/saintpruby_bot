@@ -28,3 +28,10 @@ jobs:
       At Toptal, we are all remote. You can shape your team without thinking about the location of the office. We have 170+ engineers building a platform that enables companies and talent to connect with a focus around quality. Ruby on Rails powers a lot of our infrastructure and enables us to shape the future of work.
 
       You’ll see a few of us speaking this weekend including Tatiana Shepeleva, Michal Papis, and Bozhidar Batsov. Please introduce yourself and share what brought you to this conference. We’ll probably have a lot to talk about.
+  - id: 2
+    title: We do things!
+    company: Cybergizer
+    location: Minsk, Saint P.
+    short_description: '#ruby, #elixir'
+    full_description: If you are interested in Elixir/Ruby/JS, just ping @anatoliliotych || @willson
+
