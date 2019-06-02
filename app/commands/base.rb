@@ -6,10 +6,13 @@ module Commands
     include KeyboardHelpers
     include ContextHelpers
 
+    include Import['logger']
+
     attr_reader :api
 
-    def initialize(api)
+    def initialize(api, **deps)
       @api = api
+      super(deps)
     end
 
     def call(message)
@@ -18,7 +21,11 @@ module Commands
         handle_call(message)
       when Telegram::Bot::Types::CallbackQuery
         args = JSON.parse(message.data)['args']
-        handle_callback(message, args)
+        begin
+          handle_callback(message, args)
+        rescue Telegram::Bot::Exceptions::ResponseError => e
+          logger.error("Error: #{e.message}\n#{e.backtrace.join("\n")}")
+        end
       end
     end
 
